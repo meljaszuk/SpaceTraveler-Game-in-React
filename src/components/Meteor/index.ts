@@ -1,1 +1,1 @@
-export * from './Meteor'
+export * from './Meteor';
