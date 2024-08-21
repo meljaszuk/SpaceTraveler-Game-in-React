@@ -14,9 +14,11 @@
     width: 1200px;
     overflow: hidden;
     justify-self: center;
+    position: relative;
 }
 
 .slideWrapper {
+    z-index: 0;
     height: 600px;
     animation: scrollBackground $bcg-speed linear; //FIXED NUMBER TO CHANGE
     display: flex;
@@ -24,12 +26,20 @@
 }
 
 .slide {
-    
     background-image: url($bcg-url);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 8000px;
+    height: 600px;   
+}
+
+.panel {
+    background-image: url($panel-url);
+    background-repeat: no-repeat;
+    background-size: contain;
     height: 600px;
-    
+    width: 1200px;
+    z-index: 1;
+    position: absolute;  
 }
 
