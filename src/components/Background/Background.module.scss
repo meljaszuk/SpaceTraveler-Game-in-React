@@ -1,0 +1,16 @@
+.container {
+    height: 600px;
+    border: solid 1px black;
+    display: flex;
+}
+
+.slider {
+    display: flex;
+    background-image: url('../../../public/images/bcgS.jpg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    height: 600px;
+    width: 4800px;
+    transform: translateX(-50px);
+}
