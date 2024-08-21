@@ -1,16 +1,35 @@
-.container {
-    height: 600px;
-    border: solid 1px black;
-    display: flex;
+@import '../../_utils/variables.module.scss';
+
+@keyframes scrollBackground {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
-.slider {
-    display: flex;
-    background-image: url('../../../public/images/bcgS.jpg');
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: cover;
+.container {
     height: 600px;
-    width: 4800px;
-    transform: translateX(-50px);
+    width: 1200px;
+    overflow: hidden;
+    justify-self: center;
 }
+
+.slideWrapper {
+    height: 600px;
+    animation: scrollBackground $bcg-speed linear; //FIXED NUMBER TO CHANGE
+    display: flex;
+    flex-direction: row;
+}
+
+.slide {
+    
+    background-image: url($bcg-url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 8000px;
+    height: 600px;
+    
+}
+
