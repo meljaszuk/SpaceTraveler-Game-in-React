@@ -37,8 +37,10 @@
     background-image: url($panel-url);
     background-repeat: no-repeat;
     background-size: contain;
-    height: 600px;
+    background-position: bottom;
+    height: 130px;
     width: 1200px;
+    top: 470px;
     z-index: 1;
     position: absolute;  
 }
