@@ -1,6 +1,15 @@
+$font: 'EFour', sans-serif;
+$aqua: #04f0ef;
+$dark-blue: #231e39;
 $bcg-url: '../../../public/images/bcgS.jpg';
-$bcg-speed: 200s;
+$bcg-static-url: '../../../public/images/static-bcg.jpg';
+$bcg-speed: 60s; //SHOULD AGREE WITH CONTEXT DATA
+$bcg-speed-slow: 300s; //SHOULD AGREE WITH CONTEXT DATA
+$bcg-color: #231e39;
 $panel-url: '../../../public/images/panel.png';
 $game-w: 1200px;
 $game-h: 600px;
 $slide-w: 8000px;
+$button-start-regular-url:'../../../public/images/button-start-regular.png';
+$button-start-hover-url:'../../../public/images/button-start-hover.png';
+
