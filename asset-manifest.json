@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/SpaceTraveler-Game-in-React/static/css/main.9289e432.css",
-    "main.js": "/SpaceTraveler-Game-in-React/static/js/main.6888b354.js",
+    "main.css": "/SpaceTraveler-Game-in-React/static/css/main.6c403cf8.css",
+    "main.js": "/SpaceTraveler-Game-in-React/static/js/main.51e8a43c.js",
     "static/media/bcgS.jpg": "/SpaceTraveler-Game-in-React/static/media/bcgS.afff8ec9f1886a55bf0b.jpg",
-    "static/media/panel.png": "/SpaceTraveler-Game-in-React/static/media/panel.eedc5c5f3cbdc25d878e.png",
+    "static/media/Efourpro.ttf": "/SpaceTraveler-Game-in-React/static/media/Efourpro.6c4235b574cd59b94111.ttf",
+    "static/media/panel.png": "/SpaceTraveler-Game-in-React/static/media/panel.5cf6e09abf3f834b3279.png",
     "index.html": "/SpaceTraveler-Game-in-React/index.html",
-    "main.9289e432.css.map": "/SpaceTraveler-Game-in-React/static/css/main.9289e432.css.map",
-    "main.6888b354.js.map": "/SpaceTraveler-Game-in-React/static/js/main.6888b354.js.map"
+    "main.6c403cf8.css.map": "/SpaceTraveler-Game-in-React/static/css/main.6c403cf8.css.map",
+    "main.51e8a43c.js.map": "/SpaceTraveler-Game-in-React/static/js/main.51e8a43c.js.map"
   },
   "entrypoints": [
-    "static/css/main.9289e432.css",
-    "static/js/main.6888b354.js"
+    "static/css/main.6c403cf8.css",
+    "static/js/main.51e8a43c.js"
   ]
 }
