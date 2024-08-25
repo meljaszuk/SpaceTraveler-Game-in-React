@@ -3,13 +3,13 @@ import styles from './Game.module.scss';
 
 export const Game: React.FC = () => {
   const handleNotReady = () => {
-    alert('Gameis still in development...')
-  }
+    alert('Gameis still in development...');
+  };
   return (
     <div className={styles.container}>
       <div className={styles.gameScreen}>
         <h1 className={styles.title}>space traveller</h1>
-        <div className={styles.button} onClick={handleNotReady}/>
+        <div className={styles.button} onClick={handleNotReady} />
       </div>
       <div className={styles.gamePanel}>
         <div className={styles.gameBullets}>
