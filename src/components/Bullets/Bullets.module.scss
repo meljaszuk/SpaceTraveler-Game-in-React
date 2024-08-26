@@ -1,0 +1,20 @@
+@import '../../_utils/font.module.scss';
+@import '../../_utils/variables.module.scss';
+
+.gameBullets {
+    width: 430px;
+/*     border: solid 1px yellow; */
+    display: flex;
+    padding-left: 220px;
+    padding-top: 55px;
+    box-sizing: border-box;
+}
+
+.bulletIcon {
+    background-image: url($bullet-url);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+
+}

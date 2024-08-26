@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './Game.module.scss';
-import { Level } from '../Level'
+import { Level } from '../Level';
+import { Bullets } from '../Bullets';
 
 export const Game: React.FC = () => {
   const handleNotReady = () => {
-    alert('Gameis still in development...');
+    alert('Game is still in development...');
   };
   return (
     <div className={styles.container}>
@@ -13,12 +14,7 @@ export const Game: React.FC = () => {
         <div className={styles.button} onClick={handleNotReady} />
       </div>
       <div className={styles.gamePanel}>
-        <div className={styles.gameBullets}>
-          <div className={styles.bulletIcon}></div>
-          <div className={styles.bulletIcon}></div>
-          <div className={styles.bulletIcon}></div>
-          <div className={styles.bulletIcon}></div>
-        </div>
+        <Bullets />
         <Level />
         <div className={styles.gameScore}>03567</div>
       </div>
