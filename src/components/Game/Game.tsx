@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Game.module.scss';
+import { Level } from '../Level'
 
 export const Game: React.FC = () => {
   const handleNotReady = () => {
@@ -18,7 +19,7 @@ export const Game: React.FC = () => {
           <div className={styles.bulletIcon}></div>
           <div className={styles.bulletIcon}></div>
         </div>
-        <div className={styles.gameLevel}>LEVEL 1</div>
+        <Level />
         <div className={styles.gameScore}>03567</div>
       </div>
     </div>
