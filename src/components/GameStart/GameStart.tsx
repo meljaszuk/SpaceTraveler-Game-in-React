@@ -4,10 +4,11 @@ import { Level } from '../Level';
 import { Bullets } from '../Bullets';
 import { Score } from '../Score';
 import { Title } from '../Title';
+/* import { GameState } from '../../types/types'; */
 
 export const GameStart: React.FC = () => {
   const handleNotReady = () => {
-    alert('Game is still in development...');
+    alert('Feature in progress');
   };
   return (
     <div className={styles.container}>
