@@ -1,0 +1,75 @@
+@import '../../_utils/font.module.scss';
+@import '../../_utils/variables.module.scss';
+
+@keyframes button {
+    0% {
+        transform: scale(90%);
+    }
+
+    50% {
+        transform: scale(120%);
+    }
+    100% {
+        transform: scale(90%);
+    }
+}
+
+.title {
+    color: $aqua;
+    font-family: $font;
+    letter-spacing: 5px;
+    font-size: 90px;
+    -webkit-text-stroke: $dark-blue 1px;
+    text-shadow: 0 0 30px rgba(4, 240, 239, 0.9);
+  
+}
+
+
+.container {
+    width: $game-w;
+    height: $game-h;
+    z-index: 3;
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-start;
+}
+
+
+.button {
+    background-image: url($button-start-regular-url);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height:  50px; 
+    cursor: pointer;
+    animation: button 2s ease-in-out infinite;
+
+    &:hover {
+        animation-play-state: paused;
+        background-image: url($button-start-hover-url)
+    }
+}
+
+
+.gameScreen {
+/*     border: solid 1px red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 480px;
+}
+
+.gamePanel {
+/*     border: solid 1px blue; */
+    width: 100%;
+    display: flex;
+    height: 120px;
+}
+
+
+
+
