@@ -3,6 +3,7 @@ import styles from './GameWon.module.scss';
 import { Level } from '../Level';
 import { Bullets } from '../Bullets';
 import { Score } from '../Score';
+import { Title } from '../Title';
 
 export const GameWon: React.FC = () => {
   const handleNotReady = () => {
@@ -11,7 +12,7 @@ export const GameWon: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.gameScreen}>
-        <h1 className={styles.title}>space traveller</h1>
+        <Title />
         <div>GameWon in progress</div>
       </div>
       <div className={styles.gamePanel}>

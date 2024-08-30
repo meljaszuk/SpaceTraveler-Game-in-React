@@ -1,0 +1,12 @@
+@import '../../_utils/font.module.scss';
+@import '../../_utils/variables.module.scss';
+
+.title {
+    color: $aqua;
+    font-family: $font;
+    letter-spacing: 5px;
+    font-size: 90px;
+    -webkit-text-stroke: $dark-blue 1px;
+    text-shadow: 0 0 30px rgba(4, 240, 239, 0.9);
+  
+}
