@@ -13,18 +13,39 @@ export const App: React.FC = () => {
 
   console.log('app launched');
 
-  const handleOnClick = (gameStat: 'GameStart' | 'GameActive' | 'GameWon' | 'GameOver') => {
+  const handleOnClick = (
+    gameStat: 'GameStart' | 'GameActive' | 'GameWon' | 'GameOver'
+  ) => {
     setGameStatus(gameStat);
-  }
+  };
   return (
     <div>
       <div className={styles.temporaryLinks}>
-        <div onClick={() => handleOnClick('GameStart')} className={styles.tempLinks}> GameStart </div>
-        <div onClick={() => handleOnClick('GameActive')} className={styles.tempLinks}> GameActive </div>
-        <div onClick={() => handleOnClick('GameWon')} className={styles.tempLinks}> GameWon </div>
-        <div onClick={() => handleOnClick('GameOver')} className={styles.tempLinks}> GameOver </div>
+        <div
+          onClick={() => handleOnClick('GameStart')}
+          className={styles.tempLinks}
+        >
+          GameStart
+        </div>
+        <div
+          onClick={() => handleOnClick('GameActive')}
+          className={styles.tempLinks}
+        >
+          GameActive
+        </div>
+        <div
+          onClick={() => handleOnClick('GameWon')}
+          className={styles.tempLinks}
+        >
+          GameWon
+        </div>
+        <div
+          onClick={() => handleOnClick('GameOver')}
+          className={styles.tempLinks}
+        >
+          GameOver
+        </div>
       </div>
-      
       <div className={styles.body}>
         <Background gameStatus={gameStatus} />
         {gameStatus === 'GameStart' && <GameStart />}
@@ -33,6 +54,5 @@ export const App: React.FC = () => {
         {gameStatus === 'GameOver' && <GameOver />}
       </div>
     </div>
-
   );
 };
