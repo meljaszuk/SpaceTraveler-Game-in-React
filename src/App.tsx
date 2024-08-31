@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Background } from './components/Background';
 import { GameStart } from './components/GameStart';
 import { GameActive } from './components/GameActive';
 import { GameOver } from './components/GameOver';
 import { GameWon } from './components/GameWon';
 import styles from './App.module.scss';
+import { AppContext } from './context'
+import { GameState } from './types/types'
 
 export const App: React.FC = () => {
-  const [gameStatus, setGameStatus] = useState<
-    'GameStart' | 'GameActive' | 'GameWon' | 'GameOver'
-  >('GameStart');
 
-  console.log('app launched');
+  const context = useContext(AppContext)
 
-  const handleOnClick = (
-    gameStat: 'GameStart' | 'GameActive' | 'GameWon' | 'GameOver'
-  ) => {
+  if (!context) {
+    throw new Error ('AppContext must be used within a ContextProvider')
+  }
+
+  const {gameStatus, setGameStatus} = context;
+
+  const handleOnClick = (gameStat: GameState) => {
     setGameStatus(gameStat);
   };
   return (
