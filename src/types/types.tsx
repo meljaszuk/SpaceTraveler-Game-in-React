@@ -1,3 +1,1 @@
-export interface GameState {
-    states: 'GameStart' | 'GameActive' | 'GameWon' | 'GameOver'
-}
+export type GameState = 'GameStart' | 'GameActive' | 'GameWon' | 'GameOver';
