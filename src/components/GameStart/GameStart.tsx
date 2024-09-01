@@ -22,7 +22,7 @@ export const GameStart: React.FC = () => {
   };
 
   useEffect(() => {
-    setTimeout(()=> setIsLoading(false), 1000); /* LOADING SIMULATION */
+    setTimeout(()=> setIsLoading(false), 2000); /* LOADING SIMULATION */
     console.log('LOADER done')
 }, []);
 
