@@ -13,14 +13,14 @@ export const Counter: React.FC = () => {
 
   const { setIsPaused } = context;
 
-  useEffect(()=> {
-    setIsPaused(true)
-    console.log('paused')
-  },[])
+  useEffect(() => {
+    setIsPaused(true);
+    console.log('paused');
+  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCount(prevCount => prevCount - 1);
+      setCount((prevCount) => prevCount - 1);
     }, 1000);
 
     return () => {
@@ -31,8 +31,8 @@ export const Counter: React.FC = () => {
   useEffect(() => {
     if (count < 1) {
       setIsVisible(false);
-      setIsPaused (false)
-      console.log('not paused')
+      setIsPaused(false);
+      console.log('not paused');
     }
   }, [count]);
 
@@ -42,11 +42,7 @@ export const Counter: React.FC = () => {
 
   return (
     <div className={styles.count}>
-      <div className={styles.number}>
-        {count}
-      </div>
+      <div className={styles.number}>{count}</div>
     </div>
   );
 };
-
-
