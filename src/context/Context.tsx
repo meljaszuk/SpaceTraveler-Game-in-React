@@ -19,7 +19,7 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   children,
 }) => {
   const [gameStatus, setGameStatus] = useState<GameState>('GameStart');
-  const [isPaused, setIsPaused] = useState<boolean>(true);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
