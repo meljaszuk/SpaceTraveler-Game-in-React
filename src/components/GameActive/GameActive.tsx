@@ -4,6 +4,7 @@ import { Level } from '../Level';
 import { Bullets } from '../Bullets';
 import { Score } from '../Score';
 import { Loader } from '../Loader';
+import { Counter } from '../Counter';
 
 export const GameActive: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -20,7 +21,9 @@ export const GameActive: React.FC = () => {
       ) : (
         <>
           <div className={styles.gameScreen}>
-            <div>GameActive in progress</div>
+            <div>
+              <Counter />
+            </div>
           </div>
           <div className={styles.gamePanel}>
             <Bullets />
