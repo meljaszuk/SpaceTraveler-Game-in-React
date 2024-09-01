@@ -70,3 +70,7 @@
 .GameInactive {
     animation: scrollInactiveGame $bcg-speed-slow linear infinite;
 }
+
+.GamePaused {
+    animation-play-state: paused;
+}
