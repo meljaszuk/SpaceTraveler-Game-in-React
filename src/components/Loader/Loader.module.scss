@@ -2,6 +2,8 @@
 @import '../../_utils/variables.module.scss';
 
 .wrapper {
+    z-index: 4;
+    position: absolute;
     background-color: white;
     color: red;
 }
