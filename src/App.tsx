@@ -56,7 +56,7 @@ export const App: React.FC = () => {
         </div>
 
         <div className={styles.body}>
-          <Background gameStatus={gameStatus} />
+          <Background />
           {gameStatus === 'GameStart' && <GameStart />}
           {gameStatus === 'GameActive' && <GameActive />}
           {gameStatus === 'GameWon' && <GameWon />}
