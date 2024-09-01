@@ -15,56 +15,54 @@ export const App: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus, setGameStatus} = context;
+  const { gameStatus, setGameStatus } = context;
 
   const handleOnClick = (gameStat: GameState) => {
     setGameStatus(gameStat);
   };
 
-  useEffect(()=> {
-    console.log('App started')
-  },[])
+  useEffect(() => {
+    console.log('App started');
+  }, []);
 
   return (
     <div>
-      
-        <div>
-          <div className={styles.temporaryLinks}>
-            <div
-              onClick={() => handleOnClick('GameStart')}
-              className={styles.tempLinks}
-            >
-              GameStart
-            </div>
-            <div
-              onClick={() => handleOnClick('GameActive')}
-              className={styles.tempLinks}
-            >
-              GameActive
-            </div>
-            <div
-              onClick={() => handleOnClick('GameWon')}
-              className={styles.tempLinks}
-            >
-              GameWon
-            </div>
-            <div
-              onClick={() => handleOnClick('GameOver')}
-              className={styles.tempLinks}
-            >
-              GameOver
-            </div>
+      <div>
+        <div className={styles.temporaryLinks}>
+          <div
+            onClick={() => handleOnClick('GameStart')}
+            className={styles.tempLinks}
+          >
+            GameStart
           </div>
-
-          <div className={styles.body}>
-            <Background gameStatus={gameStatus} />
-            {gameStatus === 'GameStart' && <GameStart />}
-            {gameStatus === 'GameActive' && <GameActive />}
-            {gameStatus === 'GameWon' && <GameWon />}
-            {gameStatus === 'GameOver' && <GameOver />}
+          <div
+            onClick={() => handleOnClick('GameActive')}
+            className={styles.tempLinks}
+          >
+            GameActive
+          </div>
+          <div
+            onClick={() => handleOnClick('GameWon')}
+            className={styles.tempLinks}
+          >
+            GameWon
+          </div>
+          <div
+            onClick={() => handleOnClick('GameOver')}
+            className={styles.tempLinks}
+          >
+            GameOver
           </div>
         </div>
-      
+
+        <div className={styles.body}>
+          <Background gameStatus={gameStatus} />
+          {gameStatus === 'GameStart' && <GameStart />}
+          {gameStatus === 'GameActive' && <GameActive />}
+          {gameStatus === 'GameWon' && <GameWon />}
+          {gameStatus === 'GameOver' && <GameOver />}
+        </div>
+      </div>
     </div>
   );
 };

@@ -15,16 +15,16 @@ export const GameStart: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const {setGameStatus} = context;
+  const { setGameStatus } = context;
 
   const handleStart = () => {
     setGameStatus('GameActive');
   };
 
   useEffect(() => {
-    setTimeout(()=> setIsLoading(false), 2000); /* LOADING SIMULATION */
-    console.log('LOADER done')
-}, []);
+    setTimeout(() => setIsLoading(false), 2000); /* LOADING SIMULATION */
+    console.log('LOADER done');
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -32,17 +32,18 @@ export const GameStart: React.FC = () => {
         <Loader />
       ) : (
         <>
-      <div className={styles.gameScreen}>
-        <Title />
-        <div className={styles.button} onClick={handleStart} />
-      {/*   ADD INSTRUCTIONS */}
-      </div>
-      <div className={styles.gamePanel}>
-        <Bullets />
-        <Level />
-        <Score />
-      </div>
-      </>)};
+          <div className={styles.gameScreen}>
+            <Title />
+            <div className={styles.button} onClick={handleStart} />
+            {/*   ADD INSTRUCTIONS */}
+          </div>
+          <div className={styles.gamePanel}>
+            <Bullets />
+            <Level />
+            <Score />
+          </div>
+        </>
+      )}
     </div>
   );
 };

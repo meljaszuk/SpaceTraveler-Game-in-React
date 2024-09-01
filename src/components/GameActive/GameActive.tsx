@@ -9,8 +9,8 @@ export const GameActive: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-      setIsLoading(false);
-      console.log('LOADER done')
+    setIsLoading(false);
+    console.log('LOADER done');
   }, []);
 
   return (
