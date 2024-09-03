@@ -7,6 +7,8 @@ type ContextTypes = {
   setGameStatus: (status: GameState) => void;
   isPaused: boolean;
   setIsPaused: (status: boolean) => void;
+  time: number;
+  setTime: (time: number) => void;
 };
 
 type ContextPoviderProps = {
@@ -20,10 +22,11 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
 }) => {
   const [gameStatus, setGameStatus] = useState<GameState>('GameStart');
   const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [time, setTime] = useState<number>(30);
 
   return (
     <AppContext.Provider
-      value={{ gameStatus, setGameStatus, isPaused, setIsPaused }}
+      value={{ gameStatus, setGameStatus, isPaused, setIsPaused, time, setTime}}
     >
       {children}
     </AppContext.Provider>
