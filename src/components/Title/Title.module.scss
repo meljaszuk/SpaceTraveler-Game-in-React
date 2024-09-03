@@ -2,28 +2,27 @@
 @import '../../_utils/variables.module.scss';
 
 .GameStart {
-    color: $aqua;
-    -webkit-text-stroke: $dark-blue 3px;
-    text-shadow: $game-standard-shadow;
-  
+  color: $aqua;
+  -webkit-text-stroke: $dark-blue 3px;
+  text-shadow: $game-standard-shadow;
 }
 
 .GameOver {
-    color: $game-over;
-    -webkit-text-stroke: $game-over-frame 3px;
-    text-shadow: $game-over-shadow;
+  color: $game-over;
+  -webkit-text-stroke: $game-over-frame 3px;
+  text-shadow: $game-over-shadow;
 }
 
 .GameWon {
-    color: $aqua;
-     -webkit-text-stroke: $dark-blue 3px;
-    text-shadow: $game-standard-shadow;
+  color: $aqua;
+  -webkit-text-stroke: $dark-blue 3px;
+  text-shadow: $game-standard-shadow;
 }
 
 .general {
-    padding: 80px;
-    font-family: $font;
-    letter-spacing: 5px;
-    font-size: 90px;
-    box-sizing: border-box;
+  padding: 80px;
+  font-family: $font;
+  letter-spacing: 5px;
+  font-size: 90px;
+  box-sizing: border-box;
 }

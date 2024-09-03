@@ -26,7 +26,14 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
 
   return (
     <AppContext.Provider
-      value={{ gameStatus, setGameStatus, isPaused, setIsPaused, time, setTime}}
+      value={{
+        gameStatus,
+        setGameStatus,
+        isPaused,
+        setIsPaused,
+        time,
+        setTime,
+      }}
     >
       {children}
     </AppContext.Provider>

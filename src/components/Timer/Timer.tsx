@@ -3,7 +3,6 @@ import styles from './Timer.module.scss';
 import { AppContext } from '../../context';
 
 export const Timer: React.FC = () => {
- 
   const context = useContext(AppContext);
 
   if (!context) {
@@ -14,7 +13,7 @@ export const Timer: React.FC = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      if(time >= 0) {
+      if (time >= 0) {
         setTime(time - 1);
       }
     }, 1000);
@@ -31,8 +30,6 @@ export const Timer: React.FC = () => {
       /* GO TO NEXT LEVEL AND RESET TIMER */
     }
   }, [time]);
-
-
 
   return (
     <div className={styles.count}>

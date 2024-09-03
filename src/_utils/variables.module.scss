@@ -6,7 +6,7 @@ $game-over: red;
 $game-over-frame: rgb(60, 7, 7);
 $game-over-shadow: 0 0 30px rgba(240, 4, 4, 0.9);
 $game-won: rgb(63, 246, 63);
-$game-won-shadow:  0 0 30px rgba(4, 240, 75, 0.9);
+$game-won-shadow: 0 0 30px rgba(4, 240, 75, 0.9);
 $game-standard-shadow: 0 0 30px rgba(4, 240, 239, 0.9);
 $bcg-url: '../../../public/images/bcgS.jpg';
 $bcg-static-url: '../../../public/images/static-bcg.jpg';
@@ -18,7 +18,5 @@ $panel-url: '../../../public/images/panel.png';
 $game-w: 1200px;
 $game-h: 600px;
 $slide-w: 8000px;
-$button-start-regular-url:'../../../public/images/button-start-regular.png';
-$button-start-hover-url:'../../../public/images/button-start-hover.png';
-
-
+$button-start-regular-url: '../../../public/images/button-start-regular.png';
+$button-start-hover-url: '../../../public/images/button-start-hover.png';

@@ -1,42 +1,48 @@
 @import '../../_utils/variables.module.scss';
 
 @keyframes scrollActiveGame {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-6800px); //MAKE FIXED NUMBER IN REALTION TO LENGTH OF SLIDE WRAPPER
-    }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(
+      -6800px
+    ); //MAKE FIXED NUMBER IN REALTION TO LENGTH OF SLIDE WRAPPER
+  }
 }
 
 @keyframes scrollInactiveGame {
-    0% {
-        transform: translateX(-3000px);
-    }
-    50% {
-        transform: translateX(0); //MAKE FIXED NUMBER IN REALTION TO LENGTH OF SLIDE WRAPPER
-    }
-    100% {
-        transform: translateX(-3000px); //MAKE FIXED NUMBER IN REALTION TO LENGTH OF SLIDE WRAPPER
-    }
+  0% {
+    transform: translateX(-3000px);
+  }
+  50% {
+    transform: translateX(
+      0
+    ); //MAKE FIXED NUMBER IN REALTION TO LENGTH OF SLIDE WRAPPER
+  }
+  100% {
+    transform: translateX(
+      -3000px
+    ); //MAKE FIXED NUMBER IN REALTION TO LENGTH OF SLIDE WRAPPER
+  }
 }
 
 .container {
-    height: $game-h;
-    width:  $game-w;
-    overflow: hidden;
-    justify-self: center;
-    position: relative;
-    /* border: solid 1px rgb(39, 46, 65); */
+  height: $game-h;
+  width: $game-w;
+  overflow: hidden;
+  justify-self: center;
+  position: relative;
+  /* border: solid 1px rgb(39, 46, 65); */
 }
 
 .slideWrapper {
-    z-index: 0;
-    height:  $game-h;
-    //FIXED NUMBER TO CHANGE
-    display: flex;
-    flex-direction: row;
-    background-color: $bcg-color;
+  z-index: 0;
+  height: $game-h;
+  //FIXED NUMBER TO CHANGE
+  display: flex;
+  flex-direction: row;
+  background-color: $bcg-color;
 }
 
 /* .animated {
@@ -44,33 +50,33 @@
 } */
 
 .slide {
-    background-image: url($bcg-url);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 8000px;
-    height:  $game-h;   
+  background-image: url($bcg-url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 8000px;
+  height: $game-h;
 }
 
 .panel {
-    background-image: url($panel-url);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    height: 130px;
-    width:  $game-w;
-    top: 470px;
-    z-index: 1;
-    position: absolute;  
+  background-image: url($panel-url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  height: 130px;
+  width: $game-w;
+  top: 470px;
+  z-index: 1;
+  position: absolute;
 }
 
 .GameActive {
-    animation: scrollActiveGame $bcg-speed linear;
+  animation: scrollActiveGame $bcg-speed linear;
 }
 
 .GameInactive {
-    animation: scrollInactiveGame $bcg-speed-slow linear infinite;
+  animation: scrollInactiveGame $bcg-speed-slow linear infinite;
 }
 
 .GamePaused {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }

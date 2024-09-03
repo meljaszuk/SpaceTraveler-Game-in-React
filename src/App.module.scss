@@ -1,25 +1,22 @@
 @import '_utils/variables.module.scss';
 
-
 :root {
-    background-color: $bcg-color;
-  
-      }
+  background-color: $bcg-color;
+}
 
 .body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .temporaryLinks {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .tempLinks {
-    color:white;
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
 }

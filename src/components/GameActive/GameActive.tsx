@@ -1,4 +1,4 @@
-import React, { useState, useEffect/* , useContext */ } from 'react';
+import React, { useState, useEffect /* , useContext */ } from 'react';
 import styles from './GameActive.module.scss';
 import { Level } from '../Level';
 import { Bullets } from '../Bullets';
@@ -9,7 +9,6 @@ import { Counter } from '../Counter';
 
 export const GameActive: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
 
   useEffect(() => {
     setIsLoading(false);
