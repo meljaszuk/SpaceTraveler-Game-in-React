@@ -1,0 +1,23 @@
+@import '../../_utils/font.module.scss';
+@import '../../_utils/variables.module.scss';
+
+.gamePanel {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 40000;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  .gameActive {
+    background-image: url($panel-url);
+  }
+
+  .gameOver {
+    background-image: url($panel-url-gameOver);
+  }
