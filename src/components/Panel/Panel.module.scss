@@ -21,3 +21,34 @@
   .gameOver {
     background-image: url($panel-url-gameOver);
   }
+
+  .bullets {
+    display: flex;
+    box-sizing: border-box;
+    padding-top: 55px;
+  }
+
+  .levels {
+    display: flex;
+    box-sizing: border-box;
+    padding: 27px 0 0 160px;
+  }
+
+  .timer {
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 90px;
+    padding-top: 53px;
+  }
+
+  .score {
+    display: flex;
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+
+  .margin {
+    display: flex;
+    width: 210px;
+  }
