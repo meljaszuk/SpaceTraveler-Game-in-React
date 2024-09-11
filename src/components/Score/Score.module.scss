@@ -18,6 +18,7 @@
 .gameOver {
   color: $game-over;
   text-shadow: $game-over-shadow;
+  opacity: 0.3;
 }
 
 .gameWon {
