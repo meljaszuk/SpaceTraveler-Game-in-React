@@ -1,0 +1,42 @@
+@import '../../_utils/font.module.scss';
+@import '../../_utils/variables.module.scss';
+
+@keyframes button {
+    0% {
+      transform: scale(90%);
+    }
+  
+    50% {
+      transform: scale(120%);
+    }
+    100% {
+      transform: scale(90%);
+    }
+  }
+
+.button {
+  background-image: url($button-start-regular-url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  animation: button 2s ease-in-out infinite;
+
+  &:hover {
+    animation-play-state: paused;
+    background-image: url($button-start-hover-url);
+  }
+}
+
+.GameOver {
+  position: absolute;
+  left: 43%;
+  top: 45%;
+  z-index: 100;
+
+  &:hover {
+    animation-play-state: paused;
+    background-image: url($button-start-hover-url);
+  }
+}
