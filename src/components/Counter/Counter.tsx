@@ -29,9 +29,10 @@ export const Counter: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (count < 1) {
+    if (count < 1 && count > -1) {
       setIsVisible(false);
       setIsPaused(false);
+      console.log(count)
       console.log('not paused');
     }
   }, [count]);
