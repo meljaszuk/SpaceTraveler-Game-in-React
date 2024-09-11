@@ -57,17 +57,7 @@
   height: $game-h;
 }
 
-.panel {
-  background-image: url($panel-url);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-  height: 130px;
-  width: $game-w;
-  top: 470px;
-  z-index: 1;
-  position: absolute;
-}
+
 
 .GameActive {
   animation: scrollActiveGame $bcg-speed linear;

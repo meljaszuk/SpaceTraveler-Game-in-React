@@ -20,7 +20,6 @@ export const Background: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.panel} />
       <div
         className={`${styles.slideWrapper} ${gameStatus === 'GameActive' ? styles.GameActive : gameStatus === 'GameOver' ? styles.GameOver : styles.GameInactive} ${isPaused ? styles.GamePaused : ''}`}
         style={{ width: `${BCGs.length * 8000}px` }}
