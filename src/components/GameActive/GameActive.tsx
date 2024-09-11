@@ -1,8 +1,6 @@
 import React, { useState, useEffect /* , useContext */ } from 'react';
 import styles from './GameActive.module.scss';
-import { Level } from '../Level';
-import { Bullets } from '../Bullets';
-import { Score } from '../Score';
+import { Panel } from '../Panel';
 import { Loader } from '../Loader';
 import { Counter } from '../Counter';
 /* import { AppContext } from '../../context'; */
@@ -26,11 +24,7 @@ export const GameActive: React.FC = () => {
               <Counter />
             </div>
           </div>
-          <div className={styles.gamePanel}>
-            <Bullets />
-            <Level />
-            <Score />
-          </div>
+          <Panel />
         </>
       )}
     </div>
