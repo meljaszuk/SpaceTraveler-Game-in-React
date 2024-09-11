@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import styles from './Timer.module.scss';
 import { AppContext } from '../../context';
 
@@ -9,31 +9,23 @@ export const Timer: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { setIsPaused, time, setTime } = context;
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (time >= 0) {
-        setTime(time - 1);
-      }
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (time === 0) {
-      setIsPaused(true);
-      console.log('time = 0');
-      /* GO TO NEXT LEVEL AND RESET TIMER */
-    }
-  }, [time]);
+  const { gameStatus, isPaused } = context;
 
   return (
-    <div className={styles.count}>
-      <div className={styles.number}>{time}</div>
+<div className={`${styles.gameTimer} ${gameStatus === 'GameWon' || gameStatus === 'GameStart' ? styles.inactive : ""} ${gameStatus === 'GameOver' ? styles.gameOver : ""} ${isPaused ? styles.inactive : ""}`}>
+<div className={styles.time}>
+    TIME
+  </div>
+    <div className={styles.clock}>
+      <div className={`${styles.arrow} ${gameStatus === 'GameActive' ? styles.animation : ""} ${isPaused ? styles.paused : ""}`}>
+        <div className={styles.arrowBlue}></div>
+        <div className={styles.arrowTransparent}></div>
+      </div>
+      <div className={styles.arrowWhite}></div>
     </div>
+
+</div>
+
+    
   );
 };
