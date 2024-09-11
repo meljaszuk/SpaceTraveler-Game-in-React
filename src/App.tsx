@@ -15,15 +15,25 @@ export const App: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus, setGameStatus } = context;
+  const { gameStatus, setGameStatus, setIsPaused, isPaused } = context;
 
   const handleOnClick = (gameStat: GameState) => {
     setGameStatus(gameStat);
   };
 
+  const pauseGame = () => {
+    if (gameStatus === 'GameActive') {
+      setIsPaused(!isPaused);
+    }
+  };
+
   useEffect(() => {
     console.log('App started');
   }, []);
+
+  useEffect(() => {
+    console.log(isPaused);
+  }, [isPaused]);
 
   return (
     <div>
@@ -52,6 +62,12 @@ export const App: React.FC = () => {
             className={styles.tempLinks}
           >
             GameOver
+          </div>
+          <div
+            onClick={pauseGame}
+            className={styles.tempLinks}
+          >
+            [pasue / unpause game]
           </div>
         </div>
 
