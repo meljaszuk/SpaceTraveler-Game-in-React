@@ -11,9 +11,18 @@
 }
 
 .bulletIcon {
-  background-image: url($bullet-url);
+
   background-repeat: no-repeat;
   background-size: contain;
   height: 40px;
   width: 40px;
+}
+
+.gameOver {
+  background-image: url($bullet-url-gameover);
+  opacity: 0.1;
+}
+
+.gameActive {
+  background-image: url($bullet-url);
 }
