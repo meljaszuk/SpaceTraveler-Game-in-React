@@ -11,6 +11,9 @@
   color: $game-over;
   -webkit-text-stroke: $game-over-frame 3px;
   text-shadow: $game-over-shadow;
+  position: absolute;
+  z-index: 10;
+  left: 20%;
 }
 
 .GameWon {
@@ -25,4 +28,5 @@
   letter-spacing: 5px;
   font-size: 90px;
   box-sizing: border-box;
+  z-index: 20;
 }
