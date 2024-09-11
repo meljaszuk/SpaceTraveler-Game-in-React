@@ -39,13 +39,13 @@ export const App: React.FC = () => {
             onClick={() => handleOnClick('GameActive')}
             className={styles.tempLinks}
           >
-            GameActive
+            GameActive (in progress)
           </div>
           <div
             onClick={() => handleOnClick('GameWon')}
             className={styles.tempLinks}
           >
-            GameWon
+            GameWon (in progress)
           </div>
           <div
             onClick={() => handleOnClick('GameOver')}
