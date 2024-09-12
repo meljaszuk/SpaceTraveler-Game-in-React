@@ -12,20 +12,19 @@ export const Timer: React.FC = () => {
   const { gameStatus, isPaused } = context;
 
   return (
-<div className={`${styles.gameTimer} ${gameStatus === 'GameWon' || gameStatus === 'GameStart' ? styles.inactive : ""} ${gameStatus === 'GameOver' ? styles.gameOver : ""} ${isPaused ? styles.inactive : ""}`}>
-<div className={styles.time}>
-    TIME
-  </div>
-    <div className={styles.clock}>
-      <div className={`${styles.arrow} ${gameStatus === 'GameActive' ? styles.animation : ""} ${isPaused ? styles.paused : ""}`}>
-        <div className={styles.arrowBlue}></div>
-        <div className={styles.arrowTransparent}></div>
+    <div
+      className={`${styles.gameTimer} ${gameStatus === 'GameWon' || gameStatus === 'GameStart' ? styles.inactive : ''} ${gameStatus === 'GameOver' ? styles.gameOver : ''} ${isPaused ? styles.inactive : ''}`}
+    >
+      <div className={styles.time}>TIME</div>
+      <div className={styles.clock}>
+        <div
+          className={`${styles.arrow} ${gameStatus === 'GameActive' ? styles.animation : ''} ${isPaused ? styles.paused : ''}`}
+        >
+          <div className={styles.arrowBlue}></div>
+          <div className={styles.arrowTransparent}></div>
+        </div>
+        <div className={styles.arrowWhite}></div>
       </div>
-      <div className={styles.arrowWhite}></div>
     </div>
-
-</div>
-
-    
   );
 };

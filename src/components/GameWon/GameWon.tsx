@@ -7,10 +7,6 @@ import { Loader } from '../Loader';
 export const GameWon: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const handleNotReady = () => {
-    alert('Game is still in development...');
-  };
-
   useEffect(() => {
     setIsLoading(false);
     console.log('LOADER done');

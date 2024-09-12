@@ -14,10 +14,6 @@ export const Background: React.FC = () => {
 
   let statusForStyling;
 
-  gameStatus === 'GameActive'
-    ? (statusForStyling = true)
-    : (statusForStyling = false);
-
   return (
     <div className={styles.container}>
       <div

@@ -13,8 +13,14 @@ export const Level: React.FC = () => {
   return (
     <div className={styles.gameLevel}>
       <div className={styles.wrapper}>
-        L<em className={`${styles.gameLevel} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}>EV</em>EL_|
-      </div>   
-  </div>
+        L
+        <em
+          className={`${styles.gameLevel} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}
+        >
+          EV
+        </em>
+        EL_|
+      </div>
+    </div>
   );
 };

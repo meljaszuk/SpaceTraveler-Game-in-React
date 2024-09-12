@@ -63,10 +63,7 @@ export const App: React.FC = () => {
           >
             GameOver
           </div>
-          <div
-            onClick={pauseGame}
-            className={styles.tempLinks}
-          >
+          <div onClick={pauseGame} className={styles.tempLinks}>
             [pasue / unpause game]
           </div>
         </div>

@@ -12,10 +12,18 @@ export const Bullets: React.FC = () => {
   const { gameStatus } = context;
   return (
     <div className={styles.gameBullets}>
-      <div className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}></div>
-      <div className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}></div>
-      <div className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}></div>
-      <div className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}></div>
+      <div
+        className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}
+      ></div>
+      <div
+        className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}
+      ></div>
+      <div
+        className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}
+      ></div>
+      <div
+        className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}
+      ></div>
     </div>
   );
 };

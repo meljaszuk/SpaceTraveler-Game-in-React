@@ -11,5 +11,11 @@ export const Score: React.FC = () => {
 
   const { gameStatus } = context;
 
-  return <div className={`${styles.gameScore} ${gameStatus === 'GameOver' ? styles.gameOver : ""}`}>0000</div>;
+  return (
+    <div
+      className={`${styles.gameScore} ${gameStatus === 'GameOver' ? styles.gameOver : ''}`}
+    >
+      0000
+    </div>
+  );
 };
