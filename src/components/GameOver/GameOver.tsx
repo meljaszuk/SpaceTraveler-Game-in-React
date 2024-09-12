@@ -23,17 +23,15 @@ export const GameOver: React.FC = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <>
-          <div className={styles.videoContainer}>
-            <Title />
-            <StartButton />
-            <video autoPlay loop className={styles.backgroundVideo}>
-              <source src={require('./game-over-video.mp4')} type="video/mp4" />
-              Your brwoser doesn't support videos.
-            </video>
-            <Panel />
-          </div>
-        </>
+        <div className={styles.videoContainer}>
+          <Title />
+          <StartButton />
+          <video autoPlay loop className={styles.backgroundVideo}>
+            <source src={require('./game-over-video.mp4')} type="video/mp4" />
+            Your brwoser doesn't support videos.
+          </video>
+          <Panel />
+        </div>
       )}
     </div>
   );
