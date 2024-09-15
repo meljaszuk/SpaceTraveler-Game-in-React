@@ -46,6 +46,7 @@ export const Counter: React.FC = () => {
   return (
     <div className={styles.count}>
       <div className={styles.number}>{count}</div>
+      <div></div>
     </div>
   );
 };
