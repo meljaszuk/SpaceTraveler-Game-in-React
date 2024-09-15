@@ -65,7 +65,7 @@
 
 .arrowWhite {
   height: 20px;
-  width: 2px;
+  width: 1px;
   position: absolute;
   top: 0;
   left: 19px;
@@ -90,4 +90,15 @@
 
 .gameOver {
   opacity: 0;
+}
+
+.circle {
+  position: absolute;
+  z-index: 110000;
+  background-color: $aqua;
+  width: 10px;
+  height: 10px;
+  left: 15px;
+  top: 14px;
+  border-radius: 50%;
 }

@@ -24,6 +24,7 @@ export const Timer: React.FC = () => {
           <div className={styles.arrowTransparent}></div>
         </div>
         <div className={styles.arrowWhite}></div>
+        <div className={styles.circle}></div>
       </div>
     </div>
   );
