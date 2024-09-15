@@ -4,6 +4,7 @@ import { Level } from '../Level';
 import { Bullets } from '../Bullets';
 import { Score } from '../Score';
 import { Timer } from '../Timer';
+import { InfoButton } from '../InfoButton';
 import { AppContext } from '../../context';
 
 export const Panel: React.FC = () => {
@@ -24,6 +25,7 @@ export const Panel: React.FC = () => {
       </div>
       <div className={styles.levels}>
         <Level />
+        <InfoButton /> 
       </div>
       <div className={styles.timer}>
         <Timer />

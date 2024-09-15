@@ -32,6 +32,7 @@
     display: flex;
     box-sizing: border-box;
     padding: 27px 0 0 160px;
+    flex-direction: column;
   }
 
   .timer {
@@ -52,3 +53,4 @@
     display: flex;
     width: 210px;
   }
+
