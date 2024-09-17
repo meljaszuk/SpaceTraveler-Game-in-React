@@ -24,19 +24,3 @@
     text-shadow: $game-standard-shadow;
   }
 }
-
-.play {
-  font-family: Arial, Helvetica, sans-serif;
-  color: $aqua;
-  transform: rotate(-90deg);
-  padding-left: 10px;
-  font-size: 20px;
-}
-
-.pause {
-  height: 15px;
-  width: 2px;
-  padding-right: 2px;
-  box-sizing: border-box;
-  background-color: $aqua;
-}
