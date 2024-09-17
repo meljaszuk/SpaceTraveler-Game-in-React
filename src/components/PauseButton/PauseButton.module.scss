@@ -2,41 +2,61 @@
 @import '../../_utils/variables.module.scss';
 
 
-.container {
+.icon {
   display: flex;
-  justify-content: center;
-}
-
-.info {
-  color: $aqua;
-  font-family: $font;
-  letter-spacing: 1px;
-  font-size: 20px;
-  padding-top: 5px;
+  box-shadow: 0 0 10px rgba(4, 240, 239, 0.4);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
-  text-shadow: $game-standard-shadow;
-  transition: ease-in-out 0.3s;
-
-  &:hover {
-    color: white;
-    transform: scale(110%);
-    text-shadow: $game-standard-shadow;
-    text-shadow: $game-standard-shadow;
-  }
 }
 
 .play {
-  font-family: Arial, Helvetica, sans-serif;
-  color: $aqua;
-  transform: rotate(-90deg);
-  padding-left: 10px;
-  font-size: 20px;
+  background-image: url($button-play-off);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  width: 32px;
+  height: 32px;
+
+  &:hover {
+    background-image: url($button-play-on);
+  }
+
+  &Hidden:hover {
+    background-image: url($button-play-off);
+  }
 }
 
 .pause {
-  height: 15px;
-  width: 2px;
-  padding-right: 2px;
-  box-sizing: border-box;
-  background-color: $aqua;
+  background-image: url($button-pause-off);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  width: 32px;
+  height: 32px;
+
+  &:hover {
+    background-image: url($button-pause-on);
+  }
+
+  &Hidden:hover {
+    background-image: url($button-pause-off);
+  }
+}
+
+.lowerOpac {
+  cursor: default;
+  opacity: 0.2;
+  background-image: url($button-play-off);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
+.hidden {
+  width: 32px;
+  height: 32px;
+  opacity: 0;
 }

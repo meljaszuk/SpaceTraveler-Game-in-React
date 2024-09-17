@@ -9,12 +9,24 @@ export const PauseButton: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus } = context;
+  const { isPaused, setIsPaused, isPausedBtnVisible, gameStatus } = context;
+
+  const handlePause = () => {
+    if(isPausedBtnVisible) {
+      setIsPaused(!isPaused);
+      console.log('pause button used')
+    }
+  }
+
   return (
-    <div className={styles.container}>
-        <div className={styles.play}>&#9660;</div>
-        <div className={styles.pause}></div>
-        <div className={styles.pause}></div>
+    <div className={`${!isPausedBtnVisible ? styles.lowerOpac : ""} ${styles.icon} ${gameStatus === 'GameOver' ? styles.hidden : ""}`} onClick={handlePause}>
+      <div className=
+      {`
+      ${isPaused && isPausedBtnVisible ? styles.play : ""}
+      ${isPaused && !isPausedBtnVisible ? styles.playHidden : ""}
+      ${!isPaused && !isPausedBtnVisible ? styles.pauseHidden : ""}
+      ${!isPaused && isPausedBtnVisible ? styles.pause : ""}
+      `} />
     </div>
   );
 };
