@@ -1,3 +1,4 @@
+// eslint-disable-next-line prettier/prettier
 import React, { useState, useEffect, useContext } from 'react';
 import styles from './GameOver.module.scss';
 import { Title } from '../Title';
@@ -19,6 +20,7 @@ export const GameOver: React.FC = () => {
 
   useEffect(() => {
     setIsLoading(false);
+    // eslint-disable-next-line prettier/prettier
     setIsPausedBtnVisible(false);
     console.log('LOADER done');
   }, []);
