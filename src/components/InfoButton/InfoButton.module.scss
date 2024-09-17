@@ -24,3 +24,8 @@
     text-shadow: $game-standard-shadow;
   }
 }
+
+.GameOver {
+  color: $game-over;
+  opacity: 0.6;
+}
