@@ -31,7 +31,7 @@
   .levels {
     display: flex;
     box-sizing: border-box;
-    padding: 27px 0 0 160px;
+    padding: 27px 0 0 90px;
     flex-direction: column;
   }
 
@@ -54,3 +54,7 @@
     width: 210px;
   }
 
+  .pauseButton {
+    padding-left: 25px;
+    padding-top: 60px;
+  }
