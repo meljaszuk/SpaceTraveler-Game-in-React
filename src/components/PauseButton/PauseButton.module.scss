@@ -18,9 +18,11 @@
   display: flex;
   width: 32px;
   height: 32px;
+  transition: ease-in-out 0.3s;
 
   &:hover {
     background-image: url($button-play-on);
+    transform: scale(110%);
   }
 
   &Hidden:hover {
@@ -35,9 +37,11 @@
   display: flex;
   width: 32px;
   height: 32px;
+  transition: ease-in-out 0.3s;
 
   &:hover {
     background-image: url($button-pause-on);
+    transform: scale(110%);
   }
 
   &Hidden:hover {
