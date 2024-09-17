@@ -1,3 +1,4 @@
+// eslint-disable-next-line prettier/prettier
 import React, { useState, useEffect, useContext } from 'react';
 import styles from './GameWon.module.scss';
 import { Panel } from '../Panel';
@@ -19,6 +20,7 @@ export const GameWon: React.FC = () => {
     setIsLoading(false);
     setIsPausedBtnVisible(false);
     console.log('LOADER done');
+    // eslint-disable-next-line prettier/prettier
   }, []);
 
   return (

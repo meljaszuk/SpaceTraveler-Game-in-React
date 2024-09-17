@@ -1,3 +1,4 @@
+// eslint-disable-next-line prettier/prettier
 import React, { useEffect, useState, useContext } from 'react';
 import styles from './GameStart.module.scss';
 import { Panel } from '../Panel';
