@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styles from './GameStart.module.scss';
 import { Panel } from '../Panel';
 import { Title } from '../Title';
 import { Loader } from '../Loader';
 import { StartButton } from '../StartButton';
+import { AppContext } from '../../context';
 
 export const GameStart: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('AppContext must be used within a ContextProvider');
+  }
+
+  const { setIsPausedBtnVisible } = context;
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 500); /* LOADING SIMULATION */
-    console.log('LOADER done');
+    setIsPausedBtnVisible(false)
   }, []);
 
   return (

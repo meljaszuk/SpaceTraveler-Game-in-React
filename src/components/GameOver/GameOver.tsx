@@ -1,16 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext  } from 'react';
 import styles from './GameOver.module.scss';
 import { Title } from '../Title';
 import { Loader } from '../Loader';
 import { StartButton } from '../StartButton';
 import { Panel } from '../Panel';
+import { AppContext } from '../../context';
 
 export const GameOver: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isScreenHidden, setIsScreenHidden] = useState<boolean>(true);
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('AppContext must be used within a ContextProvider');
+  }
+
+  const { setIsPausedBtnVisible } = context;
 
   useEffect(() => {
     setIsLoading(false);
+    setIsPausedBtnVisible(false)
     console.log('LOADER done');
   }, []);
 
