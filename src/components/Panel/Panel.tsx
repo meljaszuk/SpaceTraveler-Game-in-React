@@ -4,8 +4,8 @@ import { Level } from '../Level';
 import { Bullets } from '../Bullets';
 import { Score } from '../Score';
 import { Timer } from '../Timer';
-import { InfoButton } from '../InfoButton';
 import { AppContext } from '../../context';
+import { InfoButton } from '../InfoButton';
 
 export const Panel: React.FC = () => {
   const context = useContext(AppContext);
@@ -25,7 +25,7 @@ export const Panel: React.FC = () => {
       </div>
       <div className={styles.levels}>
         <Level />
-        <InfoButton /> 
+        <InfoButton />
       </div>
       <div className={styles.timer}>
         <Timer />
