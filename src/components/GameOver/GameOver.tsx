@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext  } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from './GameOver.module.scss';
 import { Title } from '../Title';
 import { Loader } from '../Loader';
@@ -19,7 +19,7 @@ export const GameOver: React.FC = () => {
 
   useEffect(() => {
     setIsLoading(false);
-    setIsPausedBtnVisible(false)
+    setIsPausedBtnVisible(false);
     console.log('LOADER done');
   }, []);
 

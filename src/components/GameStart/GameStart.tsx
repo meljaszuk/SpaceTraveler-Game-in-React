@@ -18,7 +18,7 @@ export const GameStart: React.FC = () => {
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 500); /* LOADING SIMULATION */
-    setIsPausedBtnVisible(false)
+    setIsPausedBtnVisible(false);
   }, []);
 
   return (

@@ -12,21 +12,25 @@ export const PauseButton: React.FC = () => {
   const { isPaused, setIsPaused, isPausedBtnVisible, gameStatus } = context;
 
   const handlePause = () => {
-    if(isPausedBtnVisible) {
+    if (isPausedBtnVisible) {
       setIsPaused(!isPaused);
-      console.log('pause button used')
+      console.log('pause button used');
     }
-  }
+  };
 
   return (
-    <div className={`${!isPausedBtnVisible ? styles.lowerOpac : ""} ${styles.icon} ${gameStatus === 'GameOver' ? styles.hidden : ""}`} onClick={handlePause}>
-      <div className=
-      {`
-      ${isPaused && isPausedBtnVisible ? styles.play : ""}
-      ${isPaused && !isPausedBtnVisible ? styles.playHidden : ""}
-      ${!isPaused && !isPausedBtnVisible ? styles.pauseHidden : ""}
-      ${!isPaused && isPausedBtnVisible ? styles.pause : ""}
-      `} />
+    <div
+      className={`${!isPausedBtnVisible ? styles.lowerOpac : ''} ${styles.icon} ${gameStatus === 'GameOver' ? styles.hidden : ''}`}
+      onClick={handlePause}
+    >
+      <div
+        className={`
+      ${isPaused && isPausedBtnVisible ? styles.play : ''}
+      ${isPaused && !isPausedBtnVisible ? styles.playHidden : ''}
+      ${!isPaused && !isPausedBtnVisible ? styles.pauseHidden : ''}
+      ${!isPaused && isPausedBtnVisible ? styles.pause : ''}
+      `}
+      />
     </div>
   );
 };

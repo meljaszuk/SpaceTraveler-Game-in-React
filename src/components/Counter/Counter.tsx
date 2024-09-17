@@ -24,7 +24,7 @@ export const Counter: React.FC = () => {
       setCount((prevCount) => prevCount - 1);
     }, 1000);
 
-    console.log('control counter',count);
+    console.log('control counter', count);
 
     return () => {
       clearInterval(intervalId);
@@ -36,7 +36,7 @@ export const Counter: React.FC = () => {
       setIsVisible(false);
       // eslint-disable-next-line no-unused-vars
       setIsPaused(false);
-      setIsPausedBtnVisible(true)
+      setIsPausedBtnVisible(true);
     }
   }, [count]);
 

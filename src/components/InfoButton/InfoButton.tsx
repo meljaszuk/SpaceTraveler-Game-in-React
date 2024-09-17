@@ -12,7 +12,11 @@ export const InfoButton: React.FC = () => {
   const { gameStatus } = context;
   return (
     <div className={styles.container}>
-      <div className={`${styles.info} ${gameStatus === 'GameOver' ? styles.GameOver : ""}`}>INFO</div>
+      <div
+        className={`${styles.info} ${gameStatus === 'GameOver' ? styles.GameOver : ''}`}
+      >
+        INFO
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ type ContextTypes = {
   setIsPausedBtnVisible: (status: boolean) => void;
   time: number;
   setTime: (time: number) => void;
-  count: number, 
+  count: number;
   setCount: (count: number) => void;
 };
 
@@ -38,11 +38,11 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         isPaused,
         setIsPaused,
         time,
-        setTime, 
-        count, 
+        setTime,
+        count,
         setCount,
-        isPausedBtnVisible, 
-        setIsPausedBtnVisible
+        isPausedBtnVisible,
+        setIsPausedBtnVisible,
       }}
     >
       {children}

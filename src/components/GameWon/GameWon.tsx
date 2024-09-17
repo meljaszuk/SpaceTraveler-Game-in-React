@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext  } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from './GameWon.module.scss';
 import { Panel } from '../Panel';
 import { Title } from '../Title';
@@ -17,7 +17,7 @@ export const GameWon: React.FC = () => {
 
   useEffect(() => {
     setIsLoading(false);
-    setIsPausedBtnVisible(false)
+    setIsPausedBtnVisible(false);
     console.log('LOADER done');
   }, []);
 
