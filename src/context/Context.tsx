@@ -47,7 +47,7 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         isPausedBtnVisible,
         setIsPausedBtnVisible,
         isInfo,
-        setIsInfo
+        setIsInfo,
       }}
     >
       {children}

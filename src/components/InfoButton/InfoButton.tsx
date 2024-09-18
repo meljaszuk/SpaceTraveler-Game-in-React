@@ -10,10 +10,9 @@ export const InfoButton: React.FC = () => {
   }
   const { gameStatus, setIsInfo, setIsPaused } = context;
   const openInfo = () => {
-    setIsInfo(true)
-    setIsPaused(true)
-  }
-
+    setIsInfo(true);
+    setIsPaused(true);
+  };
 
   return (
     <div className={styles.container} onClick={openInfo}>

@@ -35,7 +35,9 @@ export const Counter: React.FC = () => {
     if (count < 1 && count > -1) {
       setIsVisible(false);
       // eslint-disable-next-line no-unused-vars
-      if(!isInfo) {setIsPaused(false)};
+      if (!isInfo) {
+        setIsPaused(false);
+      }
       setIsPausedBtnVisible(true);
     }
   }, [count]);
