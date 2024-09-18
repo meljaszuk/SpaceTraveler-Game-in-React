@@ -9,16 +9,28 @@ export const StartButton: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { setGameStatus, gameStatus } = context;
+  const { setGameStatus, gameStatus, setIsInfo } = context;
 
   const handleStart = () => {
     setGameStatus('GameActive');
   };
 
+  const openInfo = () => {
+    setIsInfo(true);
+  };
+
   return (
-    <div
-      className={`${styles.button} ${gameStatus === 'GameOver' ? styles.GameOver : ''}`}
-      onClick={handleStart}
-    />
+    <div className={styles.container}>
+      <div
+        className={`${styles.button} ${gameStatus === 'GameOver' ? styles.GameOver : ''}`}
+        onClick={handleStart}
+      />
+      <div
+        className={`${styles.infoButton} ${gameStatus !== 'GameStart' ? styles.hidden : ''}`}
+        onClick={openInfo}
+      />
+
+    </div>
+
   );
 };
