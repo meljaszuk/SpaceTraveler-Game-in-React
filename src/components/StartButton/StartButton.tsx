@@ -29,8 +29,6 @@ export const StartButton: React.FC = () => {
         className={`${styles.infoButton} ${gameStatus !== 'GameStart' ? styles.hidden : ''}`}
         onClick={openInfo}
       />
-
     </div>
-
   );
 };
