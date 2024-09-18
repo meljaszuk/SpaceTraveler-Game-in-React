@@ -1,0 +1,76 @@
+@import '../../_utils/font.module.scss';
+@import '../../_utils/variables.module.scss';
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: $bcg-color;
+  width: 800px;
+  height: 350px;
+  position: absolute;
+  z-index: 600000000;
+  top: 150px;
+  left: calc((100vw - 1200px + 400px)/2);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.info {
+  font-family: $font-digital;
+  color: $aqua;
+  line-height: 17px;
+  letter-spacing: 1px;
+  padding: 0 20px 20px;
+  position: relative;
+}
+
+/* Scrollbar styles for WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* szerokość pionowego scrollbara */
+  height: 12px; /* szerokość poziomego scrollbara */
+}
+
+::-webkit-scrollbar-track {
+  background: $bcg-color; /* tło tracku */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $bcg-color; /* kolor uchwytu */
+  border-radius: 10px; /* zaokrąglone krawędzie */
+  border: 2px solid $aqua; /* obwódka wokół uchwytu */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $bcg-color; /* ciemniejszy kolor uchwytu po najechaniu */
+}
+
+/* Scrollbar styles for Firefox */
+* {
+  scrollbar-width: thin; /* szerokość: thin, auto lub none */
+  scrollbar-color: $bcg-color $aqua; /* kolor uchwytu i tracku */
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 20px;
+  position: sticky;
+  top: 0;
+  background-color: $bcg-color;
+  z-index: 700000;
+}
+
+.cross {
+  color: $aqua;
+  font-family: $font;
+  display: inline;
+  cursor: pointer;
+  transition: 0.3s transform ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    color: white;
+  }
+}
