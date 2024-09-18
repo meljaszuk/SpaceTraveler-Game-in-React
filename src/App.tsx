@@ -4,6 +4,7 @@ import { GameStart } from './components/GameStart';
 import { GameActive } from './components/GameActive';
 import { GameOver } from './components/GameOver';
 import { GameWon } from './components/GameWon';
+import { Info } from './components/Info';
 import styles from './App.module.scss';
 import { AppContext } from './context';
 import { GameState } from './types/types';
@@ -66,6 +67,7 @@ export const App: React.FC = () => {
         </div>
 
         <div className={styles.body}>
+          <Info />
           <Background />
           {gameStatus === 'GameStart' && <GameStart />}
           {gameStatus === 'GameActive' && <GameActive />}
