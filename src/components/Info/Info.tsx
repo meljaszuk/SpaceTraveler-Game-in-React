@@ -9,17 +9,18 @@ export const Info: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { isInfo, setIsInfo } = context;
+  const { isInfo, setIsInfo, setIsPaused } = context;
 
-  const handleInfo = () => {
+  const closeInfo = () => {
     setIsInfo(false)
+    setIsPaused(false)
   }
 
   return (
     <>
     {isInfo && <div className={styles.container}>
       <div className={styles.subContainer}>
-          <div className={styles.close} onClick={handleInfo}>
+          <div className={styles.close} onClick={closeInfo}>
             <div className={styles.cross}>x</div>
           </div>
           <div className={styles.info}>
