@@ -11,7 +11,7 @@ export const Counter: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { setIsPaused, setIsPausedBtnVisible } = context;
+  const { setIsPaused, setIsPausedBtnVisible, isInfo } = context;
 
   // eslint-disable-next-line no-unused-vars
   useEffect(() => {
@@ -35,7 +35,7 @@ export const Counter: React.FC = () => {
     if (count < 1 && count > -1) {
       setIsVisible(false);
       // eslint-disable-next-line no-unused-vars
-      setIsPaused(false);
+      if(!isInfo) {setIsPaused(false)};
       setIsPausedBtnVisible(true);
     }
   }, [count]);
