@@ -7,6 +7,8 @@ type ContextTypes = {
   setGameStatus: (status: GameState) => void;
   isPaused: boolean;
   setIsPaused: (status: boolean) => void;
+  isInfo: boolean;
+  setIsInfo: (status: boolean) => void;
   isPausedBtnVisible: boolean;
   setIsPausedBtnVisible: (status: boolean) => void;
   time: number;
@@ -29,6 +31,7 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [time, setTime] = useState<number>(30);
   const [count, setCount] = useState<number>(3);
   const [isPausedBtnVisible, setIsPausedBtnVisible] = useState<boolean>(false);
+  const [isInfo, setIsInfo] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
@@ -43,6 +46,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         setCount,
         isPausedBtnVisible,
         setIsPausedBtnVisible,
+        isInfo,
+        setIsInfo
       }}
     >
       {children}
