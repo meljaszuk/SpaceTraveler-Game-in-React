@@ -3,14 +3,14 @@
 
 @keyframes button {
     0% {
-      transform: scale(90%);
+      transform: scale(100%);
     }
   
     50% {
-      transform: scale(120%);
+      transform: scale(130%);
     }
     100% {
-      transform: scale(90%);
+      transform: scale(100%);
     }
   }
 
@@ -39,4 +39,27 @@
     animation-play-state: paused;
     background-image: url($button-start-hover-url);
   }
+}
+
+.infoButton {
+  background-image: url($button-info-url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+
+  &:hover {
+    background-image: url($button-info-hover-url);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
