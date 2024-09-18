@@ -9,11 +9,12 @@ export const PauseButton: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { isPaused, setIsPaused, isPausedBtnVisible, gameStatus } = context;
+  const { isPaused, setIsPaused, isPausedBtnVisible, gameStatus, setIsInfo } = context;
 
   const handlePause = () => {
     if (isPausedBtnVisible) {
       setIsPaused(!isPaused);
+      setIsInfo(false);
       console.log('pause button used');
     }
   };
