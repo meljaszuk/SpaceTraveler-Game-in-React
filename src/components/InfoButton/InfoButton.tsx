@@ -9,9 +9,13 @@ export const InfoButton: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus } = context;
+  const handleInfo = () => {
+    setIsInfo(true)
+  }
+
+  const { gameStatus, setIsInfo } = context;
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={handleInfo}>
       <div
         className={`${styles.info} ${gameStatus === 'GameOver' ? styles.GameOver : ''}`}
       >
