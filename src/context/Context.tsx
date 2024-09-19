@@ -1,6 +1,6 @@
 import React, { useState, createContext, ReactNode } from 'react';
 import { GameState, Meteor } from '../types/types';
-import { meteors, randomRotation, randomBcg, scores } from '../gameConfig'
+import { meteors, randomRotation, randomBcg } from '../gameConfig'
 
 type ContextTypes = {
   gameStatus: GameState;
@@ -18,7 +18,6 @@ type ContextTypes = {
   meteors: Meteor[];
   randomRotation: (rotation: number) => void;
   randomBcg: (bcg: number) => void;
-  scores: Record<"s" | "m" | "l", number>;
   currentScore: number;
   setCurrentScore: (score: number) => void;
   level: 0 | 1 | 2, 
@@ -62,11 +61,10 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         meteors, 
         randomRotation, 
         randomBcg, 
-        scores,
         currentScore, 
         setCurrentScore,
         level, 
-        setLevel
+        setLevel,
       }}
     >
       {children}
