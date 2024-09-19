@@ -1,6 +1,6 @@
 import React, { useState, createContext, ReactNode } from 'react';
-
-export type GameState = 'GameStart' | 'GameActive' | 'GameWon' | 'GameOver';
+import { GameState, Meteor } from '../types/types';
+import { meteors, randomRotation, randomBcg, scores } from '../gameConfig'
 
 type ContextTypes = {
   gameStatus: GameState;
@@ -15,6 +15,14 @@ type ContextTypes = {
   setTime: (time: number) => void;
   count: number;
   setCount: (count: number) => void;
+  meteors: Meteor[];
+  randomRotation: (rotation: number) => void;
+  randomBcg: (bcg: number) => void;
+  scores: Record<"s" | "m" | "l", number>;
+  currentScore: number;
+  setCurrentScore: (score: number) => void;
+  level: 0 | 1 | 2, 
+  setLevel: (level: 0 | 1 | 2) => void;
 };
 
 type ContextPoviderProps = {
@@ -32,6 +40,9 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [count, setCount] = useState<number>(3);
   const [isPausedBtnVisible, setIsPausedBtnVisible] = useState<boolean>(false);
   const [isInfo, setIsInfo] = useState<boolean>(false);
+  const [currentScore, setCurrentScore] = useState<number>(0)
+  const [level, setLevel] = useState<0 | 1 | 2>(0)
+
 
   return (
     <AppContext.Provider
@@ -48,9 +59,18 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         setIsPausedBtnVisible,
         isInfo,
         setIsInfo,
+        meteors, 
+        randomRotation, 
+        randomBcg, 
+        scores,
+        currentScore, 
+        setCurrentScore,
+        level, 
+        setLevel
       }}
     >
       {children}
     </AppContext.Provider>
   );
 };
+
