@@ -1,0 +1,38 @@
+@keyframes meteors {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: -4800px;
+    }
+}
+
+.playground {
+    position: absolute;
+    z-index: 800000;
+    border: solid 1px yellow;
+    width: 6000px;
+    left: 0;
+    height: 100%;
+    animation: meteors linear 60s;
+/*     overflow: hidden; */
+}
+
+.wrapper {
+    position: relative;
+    width: 6000px;
+    height: 100%;
+    background-color: rgba(255,255,255,20%);
+}
+
+.meteor {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: black;
+    position: absolute;
+}
