@@ -3,6 +3,7 @@ import styles from './GameActive.module.scss';
 import { Panel } from '../Panel';
 import { Loader } from '../Loader';
 import { Counter } from '../Counter';
+import { PlayGame } from '../PlayGame';
 /* import { AppContext } from '../../context'; */
 
 export const GameActive: React.FC = () => {
@@ -23,6 +24,7 @@ export const GameActive: React.FC = () => {
             <div>
               <Counter />
             </div>
+            <PlayGame />
           </div>
           <Panel />
         </>
