@@ -12,8 +12,6 @@ export const Background: React.FC = () => {
 
   const { gameStatus, isPaused } = context;
 
-  let statusForStyling;
-
   return (
     <div className={styles.container}>
       <div

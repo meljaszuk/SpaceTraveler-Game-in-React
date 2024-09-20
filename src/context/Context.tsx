@@ -1,6 +1,11 @@
 import React, { useState, createContext, ReactNode } from 'react';
 import { GameState, Meteor } from '../types/types';
-import { meteors, randomRotation, randomBcg, TIME_PER_LEVEL } from '../gameConfig'
+import {
+  meteors,
+  randomRotation,
+  randomBcg,
+  TIME_PER_LEVEL,
+} from '../gameConfig';
 
 type ContextTypes = {
   gameStatus: GameState;
@@ -20,7 +25,7 @@ type ContextTypes = {
   randomBcg: (bcg: number) => void;
   currentScore: number;
   setCurrentScore: (score: number) => void;
-  level: 0 | 1 | 2, 
+  level: 0 | 1 | 2;
   setLevel: (level: 0 | 1 | 2) => void;
   TIME_PER_LEVEL: number;
 };
@@ -40,9 +45,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [count, setCount] = useState<number>(3);
   const [isPausedBtnVisible, setIsPausedBtnVisible] = useState<boolean>(false);
   const [isInfo, setIsInfo] = useState<boolean>(false);
-  const [currentScore, setCurrentScore] = useState<number>(0)
-  const [level, setLevel] = useState<0 | 1 | 2>(0)
-
+  const [currentScore, setCurrentScore] = useState<number>(0);
+  const [level, setLevel] = useState<0 | 1 | 2>(0);
 
   return (
     <AppContext.Provider
@@ -59,18 +63,17 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         setIsPausedBtnVisible,
         isInfo,
         setIsInfo,
-        meteors, 
-        randomRotation, 
-        randomBcg, 
-        currentScore, 
+        meteors,
+        randomRotation,
+        randomBcg,
+        currentScore,
         setCurrentScore,
-        level, 
+        level,
         setLevel,
-        TIME_PER_LEVEL
+        TIME_PER_LEVEL,
       }}
     >
       {children}
     </AppContext.Provider>
   );
 };
-
