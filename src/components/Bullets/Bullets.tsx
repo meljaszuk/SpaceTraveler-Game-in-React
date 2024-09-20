@@ -19,7 +19,7 @@ export const Bullets: React.FC = () => {
   useEffect(() => {
     //decrement number of bullets on shot
     //TEMPORARY CODE:
-    const updatedBullets = [1,1,1,1,1,1,1,0,0,0]
+    const updatedBullets = [1,1,1,1,1,1,1,1,0,0,0,0]
     setBullets(updatedBullets)
   },[/* bullets */])
 

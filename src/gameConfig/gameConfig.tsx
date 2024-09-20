@@ -6,7 +6,7 @@ export const randomBcg = (): number => Math.floor(Math.random() * 5) + 1;
 export const TIME_PER_LEVEL = 60;
 export const SPEED_1 = 10;
 export const SPEED_2 = 20;
-export const BULLETS = 10;
+export const BULLETS = 12;
 
 export const meteors: Meteor[] = [
   {
