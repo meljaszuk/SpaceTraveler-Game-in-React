@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './PlayGame.module.scss';
 import { AppContext } from '../../context';
 
@@ -9,13 +9,38 @@ export const PlayGame: React.FC = () => {
       throw new Error('AppContext must be used within a ContextProvider');
     }
   
-    const { meteors } = context;
+    const { meteors, TIME_PER_LEVEL, isPaused} = context;
+    const [newXs,setNewXs] = useState<Record<string, number>>({})
+    const [counter, setCounter] = useState<number>(0);
+
+    useEffect (() => {
+      if (counter < TIME_PER_LEVEL * 100 && !isPaused) {
+        const newCounter = counter + 1
+        setTimeout(() => setCounter(newCounter), 10)
+      }
+    }, [counter, isPaused])
+
 
     useEffect(() => {
-        for(let meteor in meteors) {
-
+        let newXs: {[key: string]: number} = {};
+        for(let i = 0; i < meteors.length; i++) {
+          newXs[meteors[i].id] = meteors[i].x
         }
-    },[])
+      setNewXs(newXs)
+    },[meteors])
+
+  useEffect(() => {
+    setNewXs((prevNewXs) => {
+      const updatedXs = { ...prevNewXs }; 
+      for (let key in updatedXs) {
+        if(updatedXs[key] > -150) {
+          updatedXs[key] = updatedXs[key] - 1;
+        }
+      }
+      return updatedXs;
+    });
+  }, [counter]);
+
 
     return (
 
@@ -27,7 +52,7 @@ export const PlayGame: React.FC = () => {
           className={styles.meteor}
           style={{
             top: `${item.y}px`,
-            left: `${item.x}px`,
+            left: `${newXs[item.id]}px`,
             width: `${item.size}px`,
             height: `${item.size}px`,
             transform: `rotate(${item.rotation}deg)`,
