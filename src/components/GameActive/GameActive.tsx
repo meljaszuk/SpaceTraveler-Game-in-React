@@ -14,32 +14,27 @@ export const GameActive: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { TIME_PER_LEVEL, setTime, setGameStatus, time, isPaused} = context;
+  const { TIME_PER_LEVEL, setTime, setGameStatus, time, isPaused } = context;
 
   useEffect(() => {
     setIsLoading(false);
-    setTime(TIME_PER_LEVEL)
+    setTime(TIME_PER_LEVEL);
   }, []);
 
   useEffect(() => {
-    if(time >= 0 && !isPaused) {
-      setTimeout(()=> {
-      setTime(time - 1)
-    }, 1000)
-  }
-  }, [time, isPaused])
+    if (time >= 0 && !isPaused) {
+      setTimeout(() => {
+        setTime(time - 1);
+      }, 1000);
+    }
+  }, [time, isPaused]);
 
   useEffect(() => {
-    if(time < 0) {
-      setGameStatus('GameWon')
-      setTime(TIME_PER_LEVEL)
+    if (time < 0) {
+      setGameStatus('GameWon');
+      setTime(TIME_PER_LEVEL);
     }
-
-  }, [time])
-
-  useEffect(()=> {
-    console.log(time)
-  }, [time])
+  }, [time]);
 
   return (
     <div className={styles.container}>
