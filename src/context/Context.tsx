@@ -5,6 +5,7 @@ import {
   randomRotation,
   randomBcg,
   TIME_PER_LEVEL,
+  BULLETS
 } from '../gameConfig';
 
 type ContextTypes = {
@@ -28,6 +29,7 @@ type ContextTypes = {
   level: 0 | 1 | 2;
   setLevel: (level: 0 | 1 | 2) => void;
   TIME_PER_LEVEL: number;
+  BULLETS: number;
 };
 
 type ContextPoviderProps = {
@@ -71,6 +73,7 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         level,
         setLevel,
         TIME_PER_LEVEL,
+        BULLETS
       }}
     >
       {children}

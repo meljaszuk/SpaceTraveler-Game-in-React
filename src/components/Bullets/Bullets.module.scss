@@ -3,8 +3,17 @@
 
 .gameBullets {
 
-  /*     border: solid 1px yellow; */
+ /*      border: solid 1px yellow; */
   display: flex;
+  width: 170px;
+  column-gap: 3px;
+  height: 50px;
+  row-gap: 0;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0 20px;
+  
+
 
 
   box-sizing: border-box;
@@ -14,8 +23,8 @@
 
   background-repeat: no-repeat;
   background-size: contain;
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width: 20px;
 }
 
 .gameOver {
@@ -25,4 +34,8 @@
 
 .gameActive {
   background-image: url($bullet-url);
+}
+
+.used {
+  opacity: 0.1;
 }
