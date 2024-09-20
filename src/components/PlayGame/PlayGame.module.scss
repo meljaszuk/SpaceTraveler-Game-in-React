@@ -25,12 +25,12 @@
 .meteor {
     height: 50px;
     width: 50px;
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: black;
     position: absolute;
-    border: solid 1px yellow;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: solid 1px red;
 }

@@ -1,6 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './PlayGame.module.scss';
 import { AppContext } from '../../context';
+import meteorImg1 from '../../images/meteor-1.png';
+import meteorImg2 from '../../images/meteor-2.png';
+import meteorImg3 from '../../images/meteor-3.png';
+import meteorImg4 from '../../images/meteor-4.png';
+import meteorImg5 from '../../images/meteor-5.png';
+
+const meteorImages = [
+  meteorImg1,
+  meteorImg2,
+  meteorImg3,
+  meteorImg4,
+  meteorImg5,
+];
 
 export const PlayGame: React.FC = () => {
   const context = useContext(AppContext);
@@ -53,10 +66,11 @@ export const PlayGame: React.FC = () => {
               width: `${item.size}px`,
               height: `${item.size}px`,
               transform: `rotate(${item.rotation}deg)`,
+              backgroundImage: `url(${meteorImages[item.bcg - 1]})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
             }}
-          >
-            {item.id}
-          </div>
+          />
         ))}
       </div>
     </div>
