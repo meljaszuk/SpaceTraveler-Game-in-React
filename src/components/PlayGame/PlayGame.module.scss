@@ -10,19 +10,16 @@
 .playground {
     position: absolute;
     z-index: 800000;
-    border: solid 1px yellow;
-    width: 6000px;
+    width: 1200px;
     left: 0;
     height: 100%;
-/*     animation: meteors linear 60s; */
-/*     overflow: hidden; */
+    overflow: hidden;
 }
 
 .wrapper {
     position: relative;
     width: 6000px;
     height: 100%;
-    background-color: rgba(255,255,255,20%);
 }
 
 .meteor {
@@ -35,4 +32,5 @@
     border-radius: 50%;
     color: black;
     position: absolute;
+    border: solid 1px yellow;
 }

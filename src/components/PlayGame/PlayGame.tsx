@@ -32,7 +32,7 @@ export const PlayGame: React.FC = () => {
     setNewXs((prevNewXs) => {
       const updatedXs = { ...prevNewXs };
       for (const key in updatedXs) {
-        if (updatedXs[key] > -150) {
+        if (updatedXs[key] > -300) {
           updatedXs[key] = updatedXs[key] - 1;
         }
       }
