@@ -7,6 +7,10 @@ import {
   TIME_PER_LEVEL,
   BULLETS,
   SHIP_SPEED_MODIFIER,
+  SHIP_INITAL_X,
+  SHIP_INITAL_Y,
+  initCollisionPointsX,
+  initCollisionPointsY,
 } from '../gameConfig';
 
 type ContextTypes = {
@@ -32,6 +36,10 @@ type ContextTypes = {
   TIME_PER_LEVEL: number;
   BULLETS: number;
   SHIP_SPEED_MODIFIER: number;
+  SHIP_INITAL_Y: number;
+  SHIP_INITAL_X: number;
+  initCollisionPointsX: Record<string, number>;
+  initCollisionPointsY: Record<string, number>;
 };
 
 type ContextPoviderProps = {
@@ -77,6 +85,10 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         TIME_PER_LEVEL,
         BULLETS,
         SHIP_SPEED_MODIFIER,
+        SHIP_INITAL_X,
+        SHIP_INITAL_Y,
+        initCollisionPointsX,
+        initCollisionPointsY,
       }}
     >
       {children}

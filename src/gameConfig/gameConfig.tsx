@@ -7,7 +7,45 @@ export const TIME_PER_LEVEL = 60;
 export const SPEED_1 = 10;
 export const SPEED_2 = 20;
 export const BULLETS = 12;
-export const SHIP_SPEED_MODIFIER = 5;
+export const SHIP_SPEED_MODIFIER = 3;
+export const SHIP_INITAL_Y = 225;
+export const SHIP_INITAL_X = 200;
+
+export const initCollisionPointsX = {
+  P1: SHIP_INITAL_X + 55,
+  P2: SHIP_INITAL_X + 72,
+  P3: SHIP_INITAL_X + 88,
+  P4: SHIP_INITAL_X + 99,
+  P5: SHIP_INITAL_X + 112,
+  P6: SHIP_INITAL_X + 126,
+  P7: SHIP_INITAL_X + 139,
+  P8: SHIP_INITAL_X + 147,
+  P9: SHIP_INITAL_X + 138,
+  P10: SHIP_INITAL_X + 126,
+  P11: SHIP_INITAL_X + 113,
+  P12: SHIP_INITAL_X + 100,
+  P13: SHIP_INITAL_X + 89,
+  P14: SHIP_INITAL_X + 72,
+  P15: SHIP_INITAL_X + 54,
+};
+
+export const initCollisionPointsY = {
+  P1: SHIP_INITAL_Y + 2,
+  P2: SHIP_INITAL_Y + 2,
+  P3: SHIP_INITAL_Y + 3,
+  P4: SHIP_INITAL_Y + 9,
+  P5: SHIP_INITAL_Y + 11,
+  P6: SHIP_INITAL_Y + 15,
+  P7: SHIP_INITAL_Y + 20,
+  P8: SHIP_INITAL_Y + 29,
+  P9: SHIP_INITAL_Y + 38,
+  P10: SHIP_INITAL_Y + 44,
+  P11: SHIP_INITAL_Y + 47,
+  P12: SHIP_INITAL_Y + 49,
+  P13: SHIP_INITAL_Y + 58,
+  P14: SHIP_INITAL_Y + 58,
+  P15: SHIP_INITAL_Y + 59,
+};
 
 export const meteors: Meteor[] = [
   {

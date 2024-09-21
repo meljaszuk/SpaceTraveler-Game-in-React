@@ -22,10 +22,22 @@ export const PlayGame: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { meteors, TIME_PER_LEVEL, isPaused, SHIP_SPEED_MODIFIER } = context;
+  const {
+    meteors,
+    TIME_PER_LEVEL,
+    isPaused,
+    SHIP_SPEED_MODIFIER,
+    SHIP_INITAL_Y,
+    SHIP_INITAL_X,
+    initCollisionPointsX,
+    initCollisionPointsY,
+  } = context;
+
   const [newXs, setNewXs] = useState<Record<string, number>>({});
   const [counter, setCounter] = useState<number>(0);
-  const [shipY, setShipY] = useState<number>(225);
+  const [shipY, setShipY] = useState<number>(SHIP_INITAL_Y);
+  const [collisionPointsY, setCollisionPointsY] =
+    useState<Record<string, number>>(initCollisionPointsY);
 
   useEffect(() => {
     if (counter < TIME_PER_LEVEL * 100 && !isPaused) {
@@ -36,13 +48,32 @@ export const PlayGame: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowUp' && !isPaused) {
+        setShipY((prevY) => prevY - 1 * SHIP_SPEED_MODIFIER);
 
-        if (event.key === 'ArrowUp' && !isPaused) {
-          setShipY((prevY) => prevY - 1 * SHIP_SPEED_MODIFIER);
-        } else if (event.key === 'ArrowDown' && !isPaused) {
-          setShipY((prevY) => prevY + 1 * SHIP_SPEED_MODIFIER);
-        }
-  };
+        setCollisionPointsY((prevCollisionPointsY) => {
+          const updatedCollisionPointsY = { ...prevCollisionPointsY };
+          for (const point in updatedCollisionPointsY) {
+            updatedCollisionPointsY[point] =
+              updatedCollisionPointsY[point] - 1 * SHIP_SPEED_MODIFIER;
+          }
+
+          return updatedCollisionPointsY;
+        });
+      } else if (event.key === 'ArrowDown' && !isPaused) {
+        setShipY((prevY) => prevY + 1 * SHIP_SPEED_MODIFIER);
+
+        setCollisionPointsY((prevCollisionPointsY) => {
+          const updatedCollisionPointsY = { ...prevCollisionPointsY };
+          for (const point in updatedCollisionPointsY) {
+            updatedCollisionPointsY[point] =
+              updatedCollisionPointsY[point] + 1 * SHIP_SPEED_MODIFIER;
+          }
+
+          return updatedCollisionPointsY;
+        });
+      }
+    };
 
     window.addEventListener('keydown', handleKeyDown);
 
@@ -50,6 +81,11 @@ export const PlayGame: React.FC = () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isPaused]);
+
+  useEffect(() => {
+    console.log(collisionPointsY);
+    //LATER ADD CODE: CALL FUNCTION detectCollision, before it build info about meteor centers and detect metors in collision strip
+  }, [collisionPointsY]);
 
   useEffect(() => {
     const newXs: { [key: string]: number } = {};
@@ -92,7 +128,10 @@ export const PlayGame: React.FC = () => {
         ))}
       </div>
 
-      <div className={styles.spaceship} style={{ top: `${shipY}px` }} />
+      <div
+        className={styles.spaceship}
+        style={{ top: `${shipY}px`, left: `${SHIP_INITAL_X}px` }}
+      />
     </div>
   );
 };
