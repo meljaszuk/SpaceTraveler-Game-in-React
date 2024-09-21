@@ -61,5 +61,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  row-gap: 110px;
+  box-sizing: border-box;
+  width: 132px;
 }
