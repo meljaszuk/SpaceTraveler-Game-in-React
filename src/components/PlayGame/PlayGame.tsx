@@ -22,9 +22,11 @@ export const PlayGame: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { meteors, TIME_PER_LEVEL, isPaused } = context;
+  const { meteors, TIME_PER_LEVEL, isPaused, SHIP_SPEED_MODIFIER } = context;
   const [newXs, setNewXs] = useState<Record<string, number>>({});
   const [counter, setCounter] = useState<number>(0);
+  const [shipY, setShipY] = useState<number>(225)
+  
 
   useEffect(() => {
     if (counter < TIME_PER_LEVEL * 100 && !isPaused) {
@@ -32,6 +34,23 @@ export const PlayGame: React.FC = () => {
       setTimeout(() => setCounter(newCounter), 10);
     }
   }, [counter, isPaused]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowUp") {
+        setShipY((prevY) => prevY - 1 * SHIP_SPEED_MODIFIER); // Ruch w górę
+      } else if (event.key === "ArrowDown") {
+        setShipY((prevY) => prevY + 1 * SHIP_SPEED_MODIFIER); // Ruch w dół
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
 
   useEffect(() => {
     const newXs: { [key: string]: number } = {};
@@ -73,6 +92,11 @@ export const PlayGame: React.FC = () => {
           />
         ))}
       </div>
+
+      <div 
+        className={styles.spaceship}
+        style = {{top: `${shipY}px`}}
+      />
     </div>
   );
 };

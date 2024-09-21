@@ -37,3 +37,13 @@
     background-repeat: no-repeat;
 /*     border: solid 1px red; */
 }
+
+.spaceship {
+    width: 150px;
+    height: 60px;
+    position: absolute;
+    background-image: url($spaceship-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 200px;
+}
