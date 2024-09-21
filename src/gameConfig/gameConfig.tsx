@@ -7,6 +7,7 @@ export const TIME_PER_LEVEL = 60;
 export const SPEED_1 = 10;
 export const SPEED_2 = 20;
 export const BULLETS = 12;
+export const SHIP_SPEED_MODIFIER = 5;
 
 export const meteors: Meteor[] = [
   {
@@ -65,7 +66,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 6,
-    size: 20,
+    size: 35,
     x: 2170,
     y: 380,
     bcg: randomBcg(),
@@ -83,7 +84,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 8,
-    size: 40,
+    size: 45,
     x: 2270,
     y: 400,
     bcg: randomBcg(),
@@ -101,7 +102,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 10,
-    size: 10,
+    size: 30,
     x: 1470,
     y: 350,
     bcg: randomBcg(),
@@ -119,7 +120,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 12,
-    size: 10,
+    size: 35,
     x: 3470,
     y: 320,
     bcg: randomBcg(),
@@ -200,7 +201,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 21,
-    size: 20,
+    size: 30,
     x: 3170,
     y: 380,
     bcg: randomBcg(),
@@ -236,7 +237,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 25,
-    size: 10,
+    size: 30,
     x: 2470,
     y: 350,
     bcg: randomBcg(),
@@ -317,7 +318,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 34,
-    size: 20,
+    size: 30,
     x: 4670,
     y: 380,
     bcg: randomBcg(),
@@ -353,7 +354,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 38,
-    size: 10,
+    size: 30,
     x: 3970,
     y: 350,
     bcg: randomBcg(),
@@ -371,7 +372,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 40,
-    size: 10,
+    size: 30,
     x: 5970,
     y: 320,
     bcg: randomBcg(),
@@ -452,7 +453,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 49,
-    size: 15,
+    size: 30,
     x: 5000,
     y: 310,
     bcg: randomBcg(),
@@ -461,7 +462,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 50,
-    size: 20,
+    size: 30,
     x: 5300,
     y: 250,
     bcg: randomBcg(),
@@ -470,7 +471,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 51,
-    size: 10,
+    size: 30,
     x: 5800,
     y: 50,
     bcg: randomBcg(),
@@ -479,7 +480,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 52,
-    size: 10,
+    size: 30,
     x: 5600,
     y: 150,
     bcg: randomBcg(),
@@ -488,7 +489,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 53,
-    size: 20,
+    size: 30,
     x: 5800,
     y: 350,
     bcg: randomBcg(),

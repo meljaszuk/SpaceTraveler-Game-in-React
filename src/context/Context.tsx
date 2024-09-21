@@ -5,7 +5,8 @@ import {
   randomRotation,
   randomBcg,
   TIME_PER_LEVEL,
-  BULLETS
+  BULLETS,
+  SHIP_SPEED_MODIFIER
 } from '../gameConfig';
 
 type ContextTypes = {
@@ -30,6 +31,7 @@ type ContextTypes = {
   setLevel: (level: 0 | 1 | 2) => void;
   TIME_PER_LEVEL: number;
   BULLETS: number;
+  SHIP_SPEED_MODIFIER: number;
 };
 
 type ContextPoviderProps = {
@@ -73,7 +75,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         level,
         setLevel,
         TIME_PER_LEVEL,
-        BULLETS
+        BULLETS,
+        SHIP_SPEED_MODIFIER
       }}
     >
       {children}
