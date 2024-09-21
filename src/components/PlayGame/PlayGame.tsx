@@ -25,8 +25,7 @@ export const PlayGame: React.FC = () => {
   const { meteors, TIME_PER_LEVEL, isPaused, SHIP_SPEED_MODIFIER } = context;
   const [newXs, setNewXs] = useState<Record<string, number>>({});
   const [counter, setCounter] = useState<number>(0);
-  const [shipY, setShipY] = useState<number>(225)
-  
+  const [shipY, setShipY] = useState<number>(225);
 
   useEffect(() => {
     if (counter < TIME_PER_LEVEL * 100 && !isPaused) {
@@ -37,20 +36,19 @@ export const PlayGame: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowUp") {
+      if (event.key === 'ArrowUp') {
         setShipY((prevY) => prevY - 1 * SHIP_SPEED_MODIFIER); // Ruch w górę
-      } else if (event.key === "ArrowDown") {
+      } else if (event.key === 'ArrowDown') {
         setShipY((prevY) => prevY + 1 * SHIP_SPEED_MODIFIER); // Ruch w dół
       }
     };
 
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
-
 
   useEffect(() => {
     const newXs: { [key: string]: number } = {};
@@ -93,10 +91,7 @@ export const PlayGame: React.FC = () => {
         ))}
       </div>
 
-      <div 
-        className={styles.spaceship}
-        style = {{top: `${shipY}px`}}
-      />
+      <div className={styles.spaceship} style={{ top: `${shipY}px` }} />
     </div>
   );
 };
