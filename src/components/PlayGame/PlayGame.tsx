@@ -36,19 +36,20 @@ export const PlayGame: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowUp') {
-        setShipY((prevY) => prevY - 1 * SHIP_SPEED_MODIFIER); // Ruch w górę
-      } else if (event.key === 'ArrowDown') {
-        setShipY((prevY) => prevY + 1 * SHIP_SPEED_MODIFIER); // Ruch w dół
-      }
-    };
+
+        if (event.key === 'ArrowUp' && !isPaused) {
+          setShipY((prevY) => prevY - 1 * SHIP_SPEED_MODIFIER);
+        } else if (event.key === 'ArrowDown' && !isPaused) {
+          setShipY((prevY) => prevY + 1 * SHIP_SPEED_MODIFIER);
+        }
+  };
 
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [isPaused]);
 
   useEffect(() => {
     const newXs: { [key: string]: number } = {};
