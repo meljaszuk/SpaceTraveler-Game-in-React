@@ -61,6 +61,7 @@
 
 .GameActive {
   animation: scrollActiveGame $bcg-speed linear;
+  opacity: 0.35;
 }
 
 .GameInactive {
