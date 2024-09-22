@@ -46,7 +46,6 @@ export const initCollisionPointsY = {
   P14: SHIP_INITAL_Y + 58,
   P15: SHIP_INITAL_Y + 59,
 };
-
 export const meteors: Meteor[] = [
   {
     id: 0,
