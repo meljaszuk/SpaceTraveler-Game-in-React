@@ -84,7 +84,7 @@ export const PlayGame: React.FC = () => {
 
   useEffect(() => {
     console.log(collisionPointsY);
-    //LATER ADD CODE: CALL FUNCTION detectCollision, before it build info about meteor centers and detect metors in collision strip
+    //LATER ADD CODE: CALL FUNCTION detectCollision, before it build info about meteor centers and detect metors in collision zone
   }, [collisionPointsY]);
 
   useEffect(() => {
@@ -94,6 +94,10 @@ export const PlayGame: React.FC = () => {
     }
     setNewXs(newXs);
   }, [meteors]);
+
+/*   useEffect(() => {
+    console.log(newXs)
+  }, [newXs]) */
 
   useEffect(() => {
     setNewXs((prevNewXs) => {
@@ -110,7 +114,9 @@ export const PlayGame: React.FC = () => {
   return (
     <div className={styles.playground}>
       <div className={styles.wrapper}>
-        {meteors.map((item, index) => (
+        {meteors
+        .filter((item) => newXs[item.id] < 1200 && newXs[item.id] > 0 - item.size)
+        .map((item, index) => (
           <div
             key={index}
             className={styles.meteor}
