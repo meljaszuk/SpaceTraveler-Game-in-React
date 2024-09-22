@@ -6,6 +6,7 @@ import meteorImg2 from '../../images/meteor-2.png';
 import meteorImg3 from '../../images/meteor-3.png';
 import meteorImg4 from '../../images/meteor-4.png';
 import meteorImg5 from '../../images/meteor-5.png';
+import { Meteor } from '../../types/types';
 
 const meteorImages = [
   meteorImg1,
@@ -31,6 +32,8 @@ export const PlayGame: React.FC = () => {
     SHIP_INITAL_X,
     initCollisionPointsX,
     initCollisionPointsY,
+    COLLISION_ZONE_X1,
+    COLLISION_ZONE_X2, 
   } = context;
 
   const [newXs, setNewXs] = useState<Record<string, number>>({});
@@ -38,6 +41,8 @@ export const PlayGame: React.FC = () => {
   const [shipY, setShipY] = useState<number>(SHIP_INITAL_Y);
   const [collisionPointsY, setCollisionPointsY] =
     useState<Record<string, number>>(initCollisionPointsY);
+  const [meteorsInCollisionZone, setMeteorsInCollisionZone] = useState<Meteor[]>([])
+  const [renderedMeteors, setRenderedMeteors] = useState<Meteor[]>([])
 
   useEffect(() => {
     if (counter < TIME_PER_LEVEL * 100 && !isPaused) {
@@ -45,6 +50,7 @@ export const PlayGame: React.FC = () => {
       setTimeout(() => setCounter(newCounter), 10);
     }
   }, [counter, isPaused]);
+
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -92,11 +98,6 @@ export const PlayGame: React.FC = () => {
     };
   }, [isPaused]);
 
-  /*   useEffect(() => {
-    console.log(collisionPointsY);
-    //LATER ADD CODE: CALL FUNCTION detectCollision, before it build info about meteor centers and detect metors in collision zone
-  }, [collisionPointsY]); */
-
   useEffect(() => {
     const newXs: { [key: string]: number } = {};
     for (let i = 0; i < meteors.length; i++) {
@@ -104,10 +105,6 @@ export const PlayGame: React.FC = () => {
     }
     setNewXs(newXs);
   }, [meteors]);
-
-  /*   useEffect(() => {
-    console.log(newXs)
-  }, [newXs]) */
 
   useEffect(() => {
     setNewXs((prevNewXs) => {
@@ -119,14 +116,26 @@ export const PlayGame: React.FC = () => {
     });
   }, [counter]);
 
+  useEffect(() => {
+    const renderedMeteors = meteors.filter((item) => newXs[item.id] < 1200 && newXs[item.id] > 0 - item.size)
+    setRenderedMeteors(renderedMeteors)
+  }, [newXs])
+
+  useEffect(() => {
+    const detectedMeteors = renderedMeteors.filter((item) => newXs[item.id] < COLLISION_ZONE_X2 && newXs[item.id] > COLLISION_ZONE_X1 - item.size);
+
+    setMeteorsInCollisionZone(meteorsInCollisionZone)
+  }, [renderedMeteors])
+
+  useEffect(() => {
+    //perform collision check fot each meteor in collision zone
+/*     console.log(meteorsInCollisionZone) */
+  }, [meteorsInCollisionZone])
+
   return (
     <div className={styles.playground}>
       <div className={styles.wrapper}>
-        {meteors
-          .filter(
-            (item) => newXs[item.id] < 1200 && newXs[item.id] > 0 - item.size
-          )
-          .map((item, index) => (
+        {renderedMeteors.map((item, index) => (
             <div
               key={index}
               className={styles.meteor}
@@ -140,7 +149,8 @@ export const PlayGame: React.FC = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
               }}
-            />
+            >{item.id}
+            </div>
           ))}
       </div>
 

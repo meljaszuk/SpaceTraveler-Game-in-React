@@ -11,6 +11,8 @@ import {
   SHIP_INITAL_Y,
   initCollisionPointsX,
   initCollisionPointsY,
+  COLLISION_ZONE_X1,
+  COLLISION_ZONE_X2
 } from '../gameConfig';
 
 type ContextTypes = {
@@ -40,6 +42,8 @@ type ContextTypes = {
   SHIP_INITAL_X: number;
   initCollisionPointsX: Record<string, number>;
   initCollisionPointsY: Record<string, number>;
+  COLLISION_ZONE_X1: number;
+  COLLISION_ZONE_X2: number;
 };
 
 type ContextPoviderProps = {
@@ -89,6 +93,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         SHIP_INITAL_Y,
         initCollisionPointsX,
         initCollisionPointsY,
+        COLLISION_ZONE_X1,
+        COLLISION_ZONE_X2
       }}
     >
       {children}
