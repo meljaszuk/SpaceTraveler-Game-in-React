@@ -48,44 +48,54 @@ export const PlayGame: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowUp' && !isPaused) {
-        setShipY((prevY) => prevY - 1 * SHIP_SPEED_MODIFIER);
-
-        setCollisionPointsY((prevCollisionPointsY) => {
-          const updatedCollisionPointsY = { ...prevCollisionPointsY };
-          for (const point in updatedCollisionPointsY) {
-            updatedCollisionPointsY[point] =
-              updatedCollisionPointsY[point] - 1 * SHIP_SPEED_MODIFIER;
-          }
-
-          return updatedCollisionPointsY;
-        });
-      } else if (event.key === 'ArrowDown' && !isPaused) {
-        setShipY((prevY) => prevY + 1 * SHIP_SPEED_MODIFIER);
-
-        setCollisionPointsY((prevCollisionPointsY) => {
-          const updatedCollisionPointsY = { ...prevCollisionPointsY };
-          for (const point in updatedCollisionPointsY) {
-            updatedCollisionPointsY[point] =
-              updatedCollisionPointsY[point] + 1 * SHIP_SPEED_MODIFIER;
-          }
-
-          return updatedCollisionPointsY;
-        });
+      if (!isPaused) {
+        if (event.key === 'ArrowUp') {
+          setShipY((prevY) => {
+            if (prevY > 0) {
+              return prevY - 1 * SHIP_SPEED_MODIFIER;
+            }
+            return prevY;
+          });
+  
+          setCollisionPointsY((prevCollisionPointsY) => {
+            const updatedCollisionPointsY = { ...prevCollisionPointsY };
+            for (const point in updatedCollisionPointsY) {
+              updatedCollisionPointsY[point] =
+                updatedCollisionPointsY[point] - 1 * SHIP_SPEED_MODIFIER;
+            }
+            return updatedCollisionPointsY;
+          });
+        } else if (event.key === 'ArrowDown') {
+          setShipY((prevY) => {
+            if (prevY < 421) {
+              return prevY + 1 * SHIP_SPEED_MODIFIER;
+            }
+            return prevY;
+          });
+  
+          setCollisionPointsY((prevCollisionPointsY) => {
+            const updatedCollisionPointsY = { ...prevCollisionPointsY };
+            for (const point in updatedCollisionPointsY) {
+              updatedCollisionPointsY[point] =
+                updatedCollisionPointsY[point] + 1 * SHIP_SPEED_MODIFIER;
+            }
+            return updatedCollisionPointsY;
+          });
+        }
       }
     };
-
+  
     window.addEventListener('keydown', handleKeyDown);
-
+  
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isPaused]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     console.log(collisionPointsY);
     //LATER ADD CODE: CALL FUNCTION detectCollision, before it build info about meteor centers and detect metors in collision zone
-  }, [collisionPointsY]);
+  }, [collisionPointsY]); */
 
   useEffect(() => {
     const newXs: { [key: string]: number } = {};
@@ -103,9 +113,9 @@ export const PlayGame: React.FC = () => {
     setNewXs((prevNewXs) => {
       const updatedXs = { ...prevNewXs };
       for (const key in updatedXs) {
-        if (updatedXs[key] > -300) {
+
           updatedXs[key] = updatedXs[key] - 1;
-        }
+        
       }
       return updatedXs;
     });
