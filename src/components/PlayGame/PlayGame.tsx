@@ -56,7 +56,7 @@ export const PlayGame: React.FC = () => {
             }
             return prevY;
           });
-  
+
           setCollisionPointsY((prevCollisionPointsY) => {
             const updatedCollisionPointsY = { ...prevCollisionPointsY };
             for (const point in updatedCollisionPointsY) {
@@ -72,7 +72,7 @@ export const PlayGame: React.FC = () => {
             }
             return prevY;
           });
-  
+
           setCollisionPointsY((prevCollisionPointsY) => {
             const updatedCollisionPointsY = { ...prevCollisionPointsY };
             for (const point in updatedCollisionPointsY) {
@@ -84,15 +84,15 @@ export const PlayGame: React.FC = () => {
         }
       }
     };
-  
+
     window.addEventListener('keydown', handleKeyDown);
-  
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isPaused]);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     console.log(collisionPointsY);
     //LATER ADD CODE: CALL FUNCTION detectCollision, before it build info about meteor centers and detect metors in collision zone
   }, [collisionPointsY]); */
@@ -105,7 +105,7 @@ export const PlayGame: React.FC = () => {
     setNewXs(newXs);
   }, [meteors]);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     console.log(newXs)
   }, [newXs]) */
 
@@ -113,9 +113,7 @@ export const PlayGame: React.FC = () => {
     setNewXs((prevNewXs) => {
       const updatedXs = { ...prevNewXs };
       for (const key in updatedXs) {
-
-          updatedXs[key] = updatedXs[key] - 1;
-        
+        updatedXs[key] = updatedXs[key] - 1;
       }
       return updatedXs;
     });
@@ -125,23 +123,25 @@ export const PlayGame: React.FC = () => {
     <div className={styles.playground}>
       <div className={styles.wrapper}>
         {meteors
-        .filter((item) => newXs[item.id] < 1200 && newXs[item.id] > 0 - item.size)
-        .map((item, index) => (
-          <div
-            key={index}
-            className={styles.meteor}
-            style={{
-              top: `${item.y}px`,
-              left: `${newXs[item.id]}px`,
-              width: `${item.size}px`,
-              height: `${item.size}px`,
-              transform: `rotate(${item.rotation}deg)`,
-              backgroundImage: `url(${meteorImages[item.bcg - 1]})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'contain',
-            }}
-          />
-        ))}
+          .filter(
+            (item) => newXs[item.id] < 1200 && newXs[item.id] > 0 - item.size
+          )
+          .map((item, index) => (
+            <div
+              key={index}
+              className={styles.meteor}
+              style={{
+                top: `${item.y}px`,
+                left: `${newXs[item.id]}px`,
+                width: `${item.size}px`,
+                height: `${item.size}px`,
+                transform: `rotate(${item.rotation}deg)`,
+                backgroundImage: `url(${meteorImages[item.bcg - 1]})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+              }}
+            />
+          ))}
       </div>
 
       <div
