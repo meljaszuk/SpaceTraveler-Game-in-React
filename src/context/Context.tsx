@@ -12,7 +12,8 @@ import {
   initCollisionPointsX,
   initCollisionPointsY,
   COLLISION_ZONE_X1,
-  COLLISION_ZONE_X2
+  COLLISION_ZONE_X2,
+  METEOR_SPEED
 } from '../gameConfig';
 
 type ContextTypes = {
@@ -44,6 +45,7 @@ type ContextTypes = {
   initCollisionPointsY: Record<string, number>;
   COLLISION_ZONE_X1: number;
   COLLISION_ZONE_X2: number;
+  METEOR_SPEED: number;
 };
 
 type ContextPoviderProps = {
@@ -94,7 +96,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         initCollisionPointsX,
         initCollisionPointsY,
         COLLISION_ZONE_X1,
-        COLLISION_ZONE_X2
+        COLLISION_ZONE_X2,
+        METEOR_SPEED
       }}
     >
       {children}
