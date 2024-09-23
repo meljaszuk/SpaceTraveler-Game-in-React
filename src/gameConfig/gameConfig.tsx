@@ -45,9 +45,9 @@ export const initCollisionPointsY = {
   P10: SHIP_INITAL_Y + 44,
   P11: SHIP_INITAL_Y + 47,
   P12: SHIP_INITAL_Y + 49,
-  P13: SHIP_INITAL_Y + 58,
-  P14: SHIP_INITAL_Y + 58,
-  P15: SHIP_INITAL_Y + 59,
+  P13: SHIP_INITAL_Y + 59,
+  P14: SHIP_INITAL_Y + 60,
+  P15: SHIP_INITAL_Y + 62,
 };
 export const meteors: Meteor[] = [
   {
@@ -61,9 +61,9 @@ export const meteors: Meteor[] = [
   },
   {
     id: 55,
-    size: 30,
+    size: 60,
     x: 950,
-    y: 50,
+    y: 30,
     bcg: randomBcg(),
     timeOut: 2000,
     rotation: randomRotation(),
@@ -88,7 +88,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 0,
-    size: 30,
+    size: 35,
     x: 1230,
     y: 10,
     bcg: randomBcg(),
@@ -178,7 +178,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 10,
-    size: 30,
+    size: 35,
     x: 1470,
     y: 350,
     bcg: randomBcg(),
@@ -214,7 +214,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 14,
-    size: 30,
+    size: 35,
     x: 2230,
     y: 10,
     bcg: randomBcg(),
@@ -268,7 +268,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 20,
-    size: 30,
+    size: 35,
     x: 4070,
     y: 410,
     bcg: randomBcg(),
@@ -277,7 +277,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 21,
-    size: 30,
+    size: 35,
     x: 3170,
     y: 380,
     bcg: randomBcg(),
@@ -313,7 +313,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 25,
-    size: 30,
+    size: 35,
     x: 2470,
     y: 350,
     bcg: randomBcg(),
@@ -340,7 +340,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 28,
-    size: 30,
+    size: 35,
     x: 3800,
     y: 40,
     bcg: randomBcg(),
@@ -394,7 +394,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 34,
-    size: 30,
+    size: 35,
     x: 4670,
     y: 380,
     bcg: randomBcg(),
@@ -430,7 +430,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 38,
-    size: 30,
+    size: 35,
     x: 3970,
     y: 350,
     bcg: randomBcg(),
@@ -448,7 +448,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 40,
-    size: 30,
+    size: 35,
     x: 5970,
     y: 320,
     bcg: randomBcg(),
@@ -466,7 +466,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 42,
-    size: 30,
+    size: 35,
     x: 4730,
     y: 10,
     bcg: randomBcg(),
@@ -520,7 +520,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 48,
-    size: 30,
+    size: 35,
     x: 4700,
     y: 410,
     bcg: randomBcg(),
@@ -529,7 +529,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 49,
-    size: 30,
+    size: 35,
     x: 5000,
     y: 310,
     bcg: randomBcg(),
@@ -538,7 +538,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 50,
-    size: 30,
+    size: 35,
     x: 5300,
     y: 250,
     bcg: randomBcg(),
@@ -547,7 +547,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 51,
-    size: 30,
+    size: 35,
     x: 5800,
     y: 50,
     bcg: randomBcg(),
@@ -556,7 +556,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 52,
-    size: 30,
+    size: 35,
     x: 5600,
     y: 150,
     bcg: randomBcg(),
@@ -565,7 +565,7 @@ export const meteors: Meteor[] = [
   },
   {
     id: 53,
-    size: 30,
+    size: 35,
     x: 5800,
     y: 350,
     bcg: randomBcg(),
