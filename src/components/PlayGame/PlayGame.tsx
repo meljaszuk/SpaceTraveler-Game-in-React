@@ -48,10 +48,13 @@ export const PlayGame: React.FC = () => {
   const [isCollision, setIsCollision] = useState<boolean>(false);
 
   useEffect(() => {
-    if (counter < TIME_PER_LEVEL * 100 && !isPaused) {
-      const newCounter = counter + 1;
-      setTimeout(() => setCounter(newCounter), 10);
-    }
+    const timeoutId = setTimeout(() => {
+      setCounter((prevCounter) => prevCounter + 1);
+    }, 10);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [counter, isPaused]);
 
 
