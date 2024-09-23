@@ -9,11 +9,11 @@ export const Astronauts: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus, BULLETS } = context;
+  const { gameStatus, ASTRONAUTS } = context;
   const [astronauts, setAstronauts] = useState<number[]>([]);
 
   useEffect(() => {
-    const astronauts: number[] = Array(BULLETS).fill(1);
+    const astronauts: number[] = Array(ASTRONAUTS).fill(1);
   }, []);
 
   useEffect(
