@@ -36,6 +36,7 @@ export const PlayGame: React.FC = () => {
     COLLISION_ZONE_X1,
     COLLISION_ZONE_X2,
     METEOR_SPEED,
+    setGameStatus
   } = context;
 
   const [newXs, setNewXs] = useState<Record<string, number>>({});
@@ -167,11 +168,18 @@ export const PlayGame: React.FC = () => {
         const b: number = meteor.cY - pointY;
 
         if ((a ** 2 + b ** 2) ** 0.5 <= meteor.r) {
-          setIsPaused(true);
+          setIsCollision(true);
         }
       });
     });
   }, [meteorsInCollisionZone, shipY]);
+
+  useEffect(() => {
+    if(isCollision) {
+      setIsPaused(true)
+      setTimeout(() => setGameStatus('GameOver'), 1000)
+    }
+  }, [isCollision])
 
   return (
     <div className={styles.playground}>
@@ -199,6 +207,9 @@ export const PlayGame: React.FC = () => {
       <div
         className={styles.spaceship}
         style={{ top: `${shipY}px`, left: `${SHIP_INITAL_X}px` }}
+      />
+      <div className={`${isCollision ? styles.explosion : ""}`}
+      style={{ top: `${shipY - 20}px`, left: `${SHIP_INITAL_X + 40}px` }}
       />
     </div>
   );
