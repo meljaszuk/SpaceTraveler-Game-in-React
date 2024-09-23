@@ -19,7 +19,7 @@ export const Timer: React.FC = () => {
       <div className={styles.clock}>
         <div
           className={`${styles.arrow} ${gameStatus === 'GameActive' ? styles.animation : ''} ${isPaused ? styles.paused : ''}`}
-          style={{animationDuration: `${TIME_PER_LEVEL}s`}}
+          style={{ animationDuration: `${TIME_PER_LEVEL}s` }}
         >
           <div className={styles.arrowBlue}></div>
           <div className={styles.arrowTransparent}></div>
