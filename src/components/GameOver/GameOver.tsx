@@ -37,7 +37,7 @@ export const GameOver: React.FC = () => {
         <div className={styles.videoContainer}>
           <Title />
           <StartButton />
-          <video autoPlay loop className={styles.backgroundVideo}>
+          <video autoPlay className={styles.backgroundVideo}>
             <source src={require('./game-over-video.mp4')} type="video/mp4" />
             Your brwoser doesn't support videos.
           </video>
