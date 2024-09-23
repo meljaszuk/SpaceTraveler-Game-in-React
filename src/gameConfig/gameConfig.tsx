@@ -12,6 +12,7 @@ export const SHIP_INITAL_Y = 225;
 export const SHIP_INITAL_X = 200;
 export const COLLISION_ZONE_X1 = 255;
 export const COLLISION_ZONE_X2 = 347;
+export const METEOR_SPEED = 2;
 
 export const initCollisionPointsX = {
   P1: SHIP_INITAL_X + 55,
