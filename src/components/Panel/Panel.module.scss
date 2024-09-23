@@ -25,7 +25,7 @@
   .astronauts {
     display: flex;
     box-sizing: border-box;
-    padding-top: 53px;
+    padding: 53px 15px 0 12px;
   }
 
   .levels {
@@ -51,7 +51,7 @@
 
   .margin {
     display: flex;
-    width: 210px;
+    width: 180px;
   }
 
   .pauseButton {

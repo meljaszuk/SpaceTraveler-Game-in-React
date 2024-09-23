@@ -10,18 +10,18 @@ export const Astronauts: React.FC = () => {
   }
 
   const { gameStatus, BULLETS } = context;
-  const [bullets, setBullets] = useState<number[]>([]);
+  const [astronauts, setAstronauts] = useState<number[]>([]);
 
   useEffect(() => {
-    const bullets: number[] = Array(BULLETS).fill(1);
+    const astronauts: number[] = Array(BULLETS).fill(1);
   }, []);
 
   useEffect(
     () => {
       //decrement number of bullets on shot
       //TEMPORARY CODE:
-      const updatedBullets = [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0];
-      setBullets(updatedBullets);
+      const updatedAstronauts = [1, 1, 1, 0, 0];
+      setAstronauts(updatedAstronauts);
     },
     [
       /* bullets */
@@ -29,8 +29,8 @@ export const Astronauts: React.FC = () => {
   );
 
   return (
-    <div className={styles.gameBullets}>
-      {bullets.map((item, index) => (
+    <div className={styles.gameAstronauts}>
+      {astronauts.map((item, index) => (
         <div
           key={index}
           className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive} ${item === 1 ? '' : styles.used}`}
