@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SpaceTraveler-Game-in-React/static/css/main.a7372aae.css",
-    "main.js": "/SpaceTraveler-Game-in-React/static/js/main.f5b2a5da.js",
+    "main.css": "/SpaceTraveler-Game-in-React/static/css/main.8525331b.css",
+    "main.js": "/SpaceTraveler-Game-in-React/static/js/main.94297b4a.js",
     "static/media/game-over-video.mp4": "/SpaceTraveler-Game-in-React/static/media/game-over-video.7a5b6b677b75b324cdc9.mp4",
     "static/media/bcgS.jpg": "/SpaceTraveler-Game-in-React/static/media/bcgS.afff8ec9f1886a55bf0b.jpg",
     "static/media/meteor-2.png": "/SpaceTraveler-Game-in-React/static/media/meteor-2.846764922eb0fecb567f.png",
@@ -11,15 +11,16 @@
     "static/media/meteor-3.png": "/SpaceTraveler-Game-in-React/static/media/meteor-3.e83db2018b650330f5b7.png",
     "static/media/Efourpro.ttf": "/SpaceTraveler-Game-in-React/static/media/Efourpro.6c4235b574cd59b94111.ttf",
     "static/media/meteor-5.png": "/SpaceTraveler-Game-in-React/static/media/meteor-5.d66ef3e399d3a03993bc.png",
+    "static/media/explosion.png": "/SpaceTraveler-Game-in-React/static/media/explosion.f2a9894c779b3062ea5a.png",
     "static/media/panel.png": "/SpaceTraveler-Game-in-React/static/media/panel.5cf6e09abf3f834b3279.png",
     "static/media/spaceship.png": "/SpaceTraveler-Game-in-React/static/media/spaceship.83b046eaef80878b5e28.png",
     "static/media/Digital.ttf": "/SpaceTraveler-Game-in-React/static/media/Digital.e4f0d914940cef82362b.ttf",
     "index.html": "/SpaceTraveler-Game-in-React/index.html",
-    "main.a7372aae.css.map": "/SpaceTraveler-Game-in-React/static/css/main.a7372aae.css.map",
-    "main.f5b2a5da.js.map": "/SpaceTraveler-Game-in-React/static/js/main.f5b2a5da.js.map"
+    "main.8525331b.css.map": "/SpaceTraveler-Game-in-React/static/css/main.8525331b.css.map",
+    "main.94297b4a.js.map": "/SpaceTraveler-Game-in-React/static/js/main.94297b4a.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7372aae.css",
-    "static/js/main.f5b2a5da.js"
+    "static/css/main.8525331b.css",
+    "static/js/main.94297b4a.js"
   ]
 }
