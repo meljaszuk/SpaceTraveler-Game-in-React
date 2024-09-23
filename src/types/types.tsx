@@ -9,3 +9,10 @@ export interface Meteor {
   timeOut: number;
   rotation: number;
 }
+
+export interface MeteorInZone {
+  id: number;
+  r: number;
+  cX: number;
+  cY: number;
+}
