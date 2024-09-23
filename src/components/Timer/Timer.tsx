@@ -9,7 +9,7 @@ export const Timer: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus, isPaused } = context;
+  const { gameStatus, isPaused, TIME_PER_LEVEL } = context;
 
   return (
     <div
@@ -19,6 +19,7 @@ export const Timer: React.FC = () => {
       <div className={styles.clock}>
         <div
           className={`${styles.arrow} ${gameStatus === 'GameActive' ? styles.animation : ''} ${isPaused ? styles.paused : ''}`}
+          style={{animationDuration: `${TIME_PER_LEVEL}s`}}
         >
           <div className={styles.arrowBlue}></div>
           <div className={styles.arrowTransparent}></div>
