@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import styles from './Bullets.module.scss';
+import styles from './Astronauts.module.scss';
 import { AppContext } from '../../context';
 
-export const Bullets: React.FC = () => {
+export const Astronauts: React.FC = () => {
   const context = useContext(AppContext);
 
   if (!context) {

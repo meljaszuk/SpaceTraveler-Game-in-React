@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styles from './Panel.module.scss';
 import { Level } from '../Level';
-import { Bullets } from '../Bullets';
+import { Astronauts } from '../Astronauts';
 import { Score } from '../Score';
 import { Timer } from '../Timer';
 import { AppContext } from '../../context';
@@ -21,8 +21,8 @@ export const Panel: React.FC = () => {
       className={`${styles.gamePanel} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive}`}
     >
       <div className={styles.margin}></div>
-      <div className={styles.bullets}>
-        <Bullets />
+      <div className={styles.astronauts}>
+        <Astronauts />
       </div>
       <div className={styles.pauseButton}>
         <PauseButton />
