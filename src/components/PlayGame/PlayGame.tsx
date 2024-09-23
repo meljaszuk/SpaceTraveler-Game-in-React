@@ -56,50 +56,42 @@ export const PlayGame: React.FC = () => {
 
 
   useEffect(() => {
+    let animationFrameId: number;
+  
     const handleKeyDown = (event: KeyboardEvent) => {
       if (!isPaused) {
-        if (event.key === 'ArrowUp') {
-          setShipY((prevY) => {
-            if (prevY > 0) {
-              return prevY - 1 * SHIP_SPEED_MODIFIER;
-            }
-            return prevY;
-          });
-
-          setCollisionPointsY((prevCollisionPointsY) => {
-            const updatedCollisionPointsY = { ...prevCollisionPointsY };
-            for (const point in updatedCollisionPointsY) {
-              updatedCollisionPointsY[point] =
-                updatedCollisionPointsY[point] - 1 * SHIP_SPEED_MODIFIER;
-            }
-            return updatedCollisionPointsY;
-          });
-        } else if (event.key === 'ArrowDown') {
-          setShipY((prevY) => {
-            if (prevY < 421) {
-              return prevY + 1 * SHIP_SPEED_MODIFIER;
-            }
-            return prevY;
-          });
-
-          setCollisionPointsY((prevCollisionPointsY) => {
-            const updatedCollisionPointsY = { ...prevCollisionPointsY };
-            for (const point in updatedCollisionPointsY) {
-              updatedCollisionPointsY[point] =
-                updatedCollisionPointsY[point] + 1 * SHIP_SPEED_MODIFIER;
-            }
-            return updatedCollisionPointsY;
+        const direction = event.key === 'ArrowUp' ? -1 : event.key === 'ArrowDown' ? 1 : 0;
+  
+        if (direction !== 0) {
+          // Użycie requestAnimationFrame
+          animationFrameId = requestAnimationFrame(() => {
+            setShipY((prevY) => {
+              const newY = Math.max(0, Math.min(prevY + direction * SHIP_SPEED_MODIFIER, 421));
+              return newY;
+            });
+  
+            setCollisionPointsY((prevCollisionPointsY) => {
+              const updatedCollisionPointsY = { ...prevCollisionPointsY };
+              for (const point in updatedCollisionPointsY) {
+                updatedCollisionPointsY[point] += direction * SHIP_SPEED_MODIFIER;
+              }
+              return updatedCollisionPointsY;
+            });
           });
         }
       }
     };
-
+  
     window.addEventListener('keydown', handleKeyDown);
-
+  
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId); 
+      }
     };
   }, [isPaused]);
+  
 
   useEffect(() => {
     const newXs: { [key: string]: number } = {};
@@ -110,14 +102,29 @@ export const PlayGame: React.FC = () => {
   }, [meteors]);
 
   useEffect(() => {
-    setNewXs((prevNewXs) => {
-      const updatedXs = { ...prevNewXs };
-      for (const key in updatedXs) {
-        updatedXs[key] = updatedXs[key] - 1 * METEOR_SPEED;
-      }
-      return updatedXs;
-    });
-  }, [counter]);
+    let animationFrameId: number;
+  
+    const updateMeteorPositions = () => {
+      setNewXs((prevNewXs) => {
+        const updatedXs = { ...prevNewXs };
+        for (const key in updatedXs) {
+          updatedXs[key] = updatedXs[key] - METEOR_SPEED; 
+        }
+        return updatedXs;
+      });
+  
+      animationFrameId = requestAnimationFrame(updateMeteorPositions); 
+    };
+  
+    if (!isPaused) {
+      animationFrameId = requestAnimationFrame(updateMeteorPositions);
+    }
+  
+    return () => {
+      cancelAnimationFrame(animationFrameId); 
+    };
+  }, [isPaused]);
+  
 
   useEffect(() => {
     const renderedMeteors = meteors.filter((item) => newXs[item.id] < 1200 || newXs[item.id] > 0 - item.size)
@@ -141,13 +148,9 @@ export const PlayGame: React.FC = () => {
     setMeteorsInCollisionZone(meteorsInCollisionZone);
   }, [renderedMeteors]);
 
-/*   useEffect(() => {
-    console.log(meteorsInCollisionZone)
-  }, [meteorsInCollisionZone]) */
+
 
   useEffect(() => {
-    // Perform collision check for each meteor in collision zone
-/*     console.log('COLLISION CHECK CALLED') */
     meteorsInCollisionZone.forEach((meteor) => {
       Object.keys(collisionPointsY).forEach((key) => {
         const pointY = collisionPointsY[key as keyof typeof initCollisionPointsY];
@@ -157,8 +160,6 @@ export const PlayGame: React.FC = () => {
         
         if ((a**2 + b**2)**0.5 <= meteor.r) {
           setIsPaused(true)
-/*           console.log(SHIP_INITAL_X,shipY)
-          console.log(meteor.id) */
         }
       });
     });
