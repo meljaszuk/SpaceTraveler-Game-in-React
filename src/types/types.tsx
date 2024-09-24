@@ -6,7 +6,6 @@ export interface Meteor {
   x: number;
   y: number;
   bcg: number;
-  timeOut: number;
   rotation: number;
 }
 

@@ -56,7 +56,6 @@ export const meteors: Meteor[] = [
     x: 1100,
     y: 300,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -65,7 +64,6 @@ export const meteors: Meteor[] = [
     x: 950,
     y: 30,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -74,7 +72,6 @@ export const meteors: Meteor[] = [
     x: 800,
     y: 150,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -83,7 +80,6 @@ export const meteors: Meteor[] = [
     x: 700,
     y: 370,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -92,7 +88,6 @@ export const meteors: Meteor[] = [
     x: 1230,
     y: 10,
     bcg: randomBcg(),
-    timeOut: 0,
     rotation: randomRotation(),
   },
   {
@@ -101,7 +96,6 @@ export const meteors: Meteor[] = [
     x: 1300,
     y: 410,
     bcg: randomBcg(),
-    timeOut: 1000,
     rotation: randomRotation(),
   },
   {
@@ -110,7 +104,6 @@ export const meteors: Meteor[] = [
     x: 1200,
     y: 90,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -119,7 +112,6 @@ export const meteors: Meteor[] = [
     x: 1600,
     y: 50,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -128,7 +120,6 @@ export const meteors: Meteor[] = [
     x: 1920,
     y: 210,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -137,7 +128,6 @@ export const meteors: Meteor[] = [
     x: 1570,
     y: 350,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -146,7 +136,6 @@ export const meteors: Meteor[] = [
     x: 2170,
     y: 380,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -155,7 +144,6 @@ export const meteors: Meteor[] = [
     x: 1970,
     y: 100,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -164,7 +152,6 @@ export const meteors: Meteor[] = [
     x: 2270,
     y: 400,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -173,7 +160,6 @@ export const meteors: Meteor[] = [
     x: 1470,
     y: 150,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -182,7 +168,6 @@ export const meteors: Meteor[] = [
     x: 1470,
     y: 350,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -191,7 +176,6 @@ export const meteors: Meteor[] = [
     x: 2370,
     y: 30,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -200,7 +184,6 @@ export const meteors: Meteor[] = [
     x: 3470,
     y: 320,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -209,7 +192,6 @@ export const meteors: Meteor[] = [
     x: 3370,
     y: -40,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -218,7 +200,6 @@ export const meteors: Meteor[] = [
     x: 2230,
     y: 10,
     bcg: randomBcg(),
-    timeOut: 0,
     rotation: randomRotation(),
   },
   {
@@ -227,7 +208,6 @@ export const meteors: Meteor[] = [
     x: 2450,
     y: 430,
     bcg: randomBcg(),
-    timeOut: 1000,
     rotation: randomRotation(),
   },
   {
@@ -236,7 +216,6 @@ export const meteors: Meteor[] = [
     x: 2200,
     y: 90,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -245,7 +224,6 @@ export const meteors: Meteor[] = [
     x: 2600,
     y: 50,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -254,7 +232,6 @@ export const meteors: Meteor[] = [
     x: 2970,
     y: 250,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -263,7 +240,6 @@ export const meteors: Meteor[] = [
     x: 2870,
     y: 410,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -272,7 +248,6 @@ export const meteors: Meteor[] = [
     x: 4070,
     y: 410,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -281,7 +256,6 @@ export const meteors: Meteor[] = [
     x: 3170,
     y: 380,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -290,7 +264,6 @@ export const meteors: Meteor[] = [
     x: 2970,
     y: 70,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -299,7 +272,6 @@ export const meteors: Meteor[] = [
     x: 3270,
     y: 400,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -308,7 +280,6 @@ export const meteors: Meteor[] = [
     x: 2470,
     y: 150,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -317,7 +288,6 @@ export const meteors: Meteor[] = [
     x: 2470,
     y: 350,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -326,7 +296,6 @@ export const meteors: Meteor[] = [
     x: 3170,
     y: 30,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -335,7 +304,6 @@ export const meteors: Meteor[] = [
     x: 3670,
     y: 280,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -344,7 +312,6 @@ export const meteors: Meteor[] = [
     x: 3800,
     y: 40,
     bcg: randomBcg(),
-    timeOut: 0,
     rotation: randomRotation(),
   },
   {
@@ -353,7 +320,6 @@ export const meteors: Meteor[] = [
     x: 4750,
     y: 310,
     bcg: randomBcg(),
-    timeOut: 1000,
     rotation: randomRotation(),
   },
   {
@@ -362,7 +328,6 @@ export const meteors: Meteor[] = [
     x: 3700,
     y: 90,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -371,7 +336,6 @@ export const meteors: Meteor[] = [
     x: 4100,
     y: 50,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -380,7 +344,6 @@ export const meteors: Meteor[] = [
     x: 4420,
     y: 210,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -389,7 +352,6 @@ export const meteors: Meteor[] = [
     x: 4070,
     y: 350,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -398,7 +360,6 @@ export const meteors: Meteor[] = [
     x: 4670,
     y: 380,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -407,7 +368,6 @@ export const meteors: Meteor[] = [
     x: 4470,
     y: 100,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -416,7 +376,6 @@ export const meteors: Meteor[] = [
     x: 4770,
     y: 400,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -425,7 +384,6 @@ export const meteors: Meteor[] = [
     x: 3970,
     y: 150,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -434,7 +392,6 @@ export const meteors: Meteor[] = [
     x: 3970,
     y: 350,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -443,7 +400,6 @@ export const meteors: Meteor[] = [
     x: 4870,
     y: 30,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -452,7 +408,6 @@ export const meteors: Meteor[] = [
     x: 5970,
     y: 320,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -461,7 +416,6 @@ export const meteors: Meteor[] = [
     x: 5870,
     y: -40,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -470,7 +424,6 @@ export const meteors: Meteor[] = [
     x: 4730,
     y: 10,
     bcg: randomBcg(),
-    timeOut: 0,
     rotation: randomRotation(),
   },
   {
@@ -479,7 +432,6 @@ export const meteors: Meteor[] = [
     x: 4950,
     y: 430,
     bcg: randomBcg(),
-    timeOut: 1000,
     rotation: randomRotation(),
   },
   {
@@ -488,7 +440,6 @@ export const meteors: Meteor[] = [
     x: 4700,
     y: 90,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -497,7 +448,6 @@ export const meteors: Meteor[] = [
     x: 5100,
     y: 50,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -506,7 +456,6 @@ export const meteors: Meteor[] = [
     x: 5470,
     y: 250,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -515,7 +464,6 @@ export const meteors: Meteor[] = [
     x: 5370,
     y: 410,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -524,7 +472,6 @@ export const meteors: Meteor[] = [
     x: 4700,
     y: 410,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -533,7 +480,6 @@ export const meteors: Meteor[] = [
     x: 5000,
     y: 310,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -542,7 +488,6 @@ export const meteors: Meteor[] = [
     x: 5300,
     y: 250,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -551,7 +496,6 @@ export const meteors: Meteor[] = [
     x: 5800,
     y: 50,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -560,7 +504,6 @@ export const meteors: Meteor[] = [
     x: 5600,
     y: 150,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
   {
@@ -569,7 +512,6 @@ export const meteors: Meteor[] = [
     x: 5800,
     y: 350,
     bcg: randomBcg(),
-    timeOut: 2000,
     rotation: randomRotation(),
   },
 ];
