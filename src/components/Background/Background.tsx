@@ -16,7 +16,10 @@ export const Background: React.FC = () => {
     <div className={styles.container}>
       <div
         className={`${styles.slideWrapper} ${gameStatus === 'GameActive' ? styles.GameActive : gameStatus === 'GameOver' ? styles.GameOver : styles.GameInactive} ${isPaused ? styles.GamePaused : ''}`}
-        style={{ width: `${BCGs.length * 8000}px`, animationDuration: `${TIME_PER_LEVEL + 1}s` }}
+        style={{
+          width: `${BCGs.length * 8000}px`,
+          animationDuration: `${TIME_PER_LEVEL + 1}s`,
+        }}
       >
         {BCGs.map((_, index) => (
           <div className={styles.slide} key={index}></div>

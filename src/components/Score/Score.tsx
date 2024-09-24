@@ -9,11 +9,17 @@ export const Score: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus, score, setScore, rescuedAstronauts, SCORE_PER_ASTRONAUT} = context;
+  const {
+    gameStatus,
+    score,
+    setScore,
+    rescuedAstronauts,
+    SCORE_PER_ASTRONAUT,
+  } = context;
 
   useEffect(() => {
     setScore(rescuedAstronauts * SCORE_PER_ASTRONAUT);
-  }, [rescuedAstronauts])
+  }, [rescuedAstronauts]);
   return (
     <div
       className={`${styles.gameScore} ${gameStatus === 'GameOver' ? styles.gameOver : ''}`}

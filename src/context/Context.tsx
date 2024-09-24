@@ -14,7 +14,7 @@ import {
   COLLISION_ZONE_X1,
   COLLISION_ZONE_X2,
   METEOR_SPEED,
-  SCORE_PER_ASTRONAUT
+  SCORE_PER_ASTRONAUT,
 } from '../gameConfig';
 
 type ContextTypes = {
@@ -71,8 +71,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [isInfo, setIsInfo] = useState<boolean>(false);
   const [currentScore, setCurrentScore] = useState<number>(0);
   const [level, setLevel] = useState<0 | 1 | 2>(0);
-  const [score, setScore] = useState<number>(0)
-  const [rescuedAstronauts, setRescuedAstronauts] = useState<number>(0)
+  const [score, setScore] = useState<number>(0);
+  const [rescuedAstronauts, setRescuedAstronauts] = useState<number>(0);
 
   return (
     <AppContext.Provider
@@ -109,7 +109,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         score,
         setScore,
         SCORE_PER_ASTRONAUT,
-        rescuedAstronauts, setRescuedAstronauts
+        rescuedAstronauts,
+        setRescuedAstronauts,
       }}
     >
       {children}

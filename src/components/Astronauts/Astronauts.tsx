@@ -17,14 +17,14 @@ export const Astronauts: React.FC = () => {
     for (let i = 0; i < rescuedAstronauts; i++) {
       astronauts[i] = 1;
     }
-    setAstronauts(astronauts)
+    setAstronauts(astronauts);
   }, []);
 
   useEffect(() => {
     astronauts[rescuedAstronauts - 1] = 1;
-  }, [rescuedAstronauts])
+  }, [rescuedAstronauts]);
 
-    return (
+  return (
     <div className={styles.gameAstronauts}>
       {astronauts.map((item, index) => (
         <div

@@ -13,18 +13,7 @@ import Img9 from '../../images/meteor-9.png';
 import Img10 from '../../images/meteor-10.png';
 import { Meteor, MeteorInZone } from '../../types/types';
 
-const images = [
-  Img1,
-  Img2,
-  Img3,
-  Img4,
-  Img5,
-  Img6,
-  Img7,
-  Img8,
-  Img9,
-  Img10,
-];
+const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10];
 
 export const PlayGame: React.FC = () => {
   const context = useContext(AppContext);
@@ -47,7 +36,7 @@ export const PlayGame: React.FC = () => {
     COLLISION_ZONE_X2,
     METEOR_SPEED,
     setGameStatus,
-    setRescuedAstronauts
+    setRescuedAstronauts,
   } = context;
 
   const [newXs, setNewXs] = useState<Record<string, number>>({});
@@ -60,7 +49,7 @@ export const PlayGame: React.FC = () => {
   >([]);
   const [renderedMeteors, setRenderedMeteors] = useState<Meteor[]>([]);
   const [isCollision, setIsCollision] = useState<boolean>(false);
-  const [astronautIDs, setAstronautsIds] = useState<Record<number, number>>({})
+  const [astronautIDs, setAstronautsIds] = useState<Record<number, number>>({});
 
   useEffect(() => {
     if (counter < TIME_PER_LEVEL * 100 && !isPaused) {
@@ -149,7 +138,7 @@ export const PlayGame: React.FC = () => {
         r: meteor.size / 2,
         cX: newXs[meteor.id] + meteor.size / 2,
         cY: meteor.y + meteor.size / 2,
-        astronaut: meteor.astronaut
+        astronaut: meteor.astronaut,
       })
     );
 
@@ -167,13 +156,13 @@ export const PlayGame: React.FC = () => {
         const b: number = meteor.cY - pointY;
 
         if ((a ** 2 + b ** 2) ** 0.5 <= meteor.r) {
-          if(meteor.astronaut === true) {
+          if (meteor.astronaut === true) {
             setAstronautsIds((prevAstronautIDs) => {
               if (!prevAstronautIDs[meteor.id]) {
                 return { ...prevAstronautIDs, [meteor.id]: 1 };
               }
               return prevAstronautIDs;
-            })
+            });
           } else if (meteor.astronaut === undefined) {
             if (!isCollision) {
               setIsCollision(true);
@@ -184,12 +173,11 @@ export const PlayGame: React.FC = () => {
     });
   }, [meteorsInCollisionZone, shipY]);
 
-
   useEffect(() => {
-    const astronautsNumber = Object.keys(astronautIDs).length
-  console.log(astronautsNumber, astronautIDs)
-  setRescuedAstronauts(astronautsNumber)
-  }, [astronautIDs])
+    const astronautsNumber = Object.keys(astronautIDs).length;
+    console.log(astronautsNumber, astronautIDs);
+    setRescuedAstronauts(astronautsNumber);
+  }, [astronautIDs]);
 
   useEffect(() => {
     if (isCollision) {
