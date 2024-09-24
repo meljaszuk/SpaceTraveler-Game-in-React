@@ -7,6 +7,7 @@ export interface Meteor {
   y: number;
   bcg: number;
   rotation: number;
+  astronaut?: boolean;
 }
 
 export interface MeteorInZone {
@@ -14,4 +15,5 @@ export interface MeteorInZone {
   r: number;
   cX: number;
   cY: number;
+  astronaut?: boolean;
 }
