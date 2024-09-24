@@ -14,6 +14,9 @@ export const Astronauts: React.FC = () => {
 
   useEffect(() => {
     const astronauts: number[] = Array(ASTRONAUTS).fill(0);
+    for (let i = 0; i < rescuedAstronauts; i++) {
+      astronauts[i] = 1;
+    }
     setAstronauts(astronauts)
   }, []);
 
