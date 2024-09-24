@@ -9,13 +9,13 @@ export const Score: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus } = context;
+  const { gameStatus, score } = context;
 
   return (
     <div
       className={`${styles.gameScore} ${gameStatus === 'GameOver' ? styles.gameOver : ''}`}
     >
-      0000
+      {score}
     </div>
   );
 };

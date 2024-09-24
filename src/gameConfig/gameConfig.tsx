@@ -13,6 +13,7 @@ export const SHIP_INITAL_X = 200;
 export const COLLISION_ZONE_X1 = 255;
 export const COLLISION_ZONE_X2 = 347;
 export const METEOR_SPEED = 2;
+export const SCORE_PER_ASTRONAUT = 500;
 
 export const initCollisionPointsX = {
   P1: SHIP_INITAL_X + 55,
@@ -50,6 +51,51 @@ export const initCollisionPointsY = {
   P15: SHIP_INITAL_Y + 62,
 };
 export const meteors: Meteor[] = [
+  {
+    id: 100,
+    size: 50,
+    x: 770,
+    y: 100,
+    bcg: 6,
+    rotation: 0,
+    astronaut: true,
+  },
+  {
+    id: 101,
+    size: 50,
+    x: 1570,
+    y: 400,
+    bcg: 7,
+    rotation: 0,
+    astronaut: true,
+  },
+  {
+    id: 102,
+    size: 50,
+    x: 1770,
+    y: 400,
+    bcg: 8,
+    rotation: 0,
+    astronaut: true,
+  },
+  {
+    id: 103,
+    size: 50,
+    x: 2070,
+    y: 400,
+    bcg: 9,
+    rotation: 0,
+    astronaut: true,
+  },
+  {
+    id: 104,
+    size: 50,
+    x: 3000,
+    y: 400,
+    bcg: 10,
+    rotation: 0,
+    astronaut: true,
+  },
   {
     id: 54,
     size: 200,

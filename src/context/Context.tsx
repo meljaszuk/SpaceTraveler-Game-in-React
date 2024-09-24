@@ -14,6 +14,7 @@ import {
   COLLISION_ZONE_X1,
   COLLISION_ZONE_X2,
   METEOR_SPEED,
+  SCORE_PER_ASTRONAUT
 } from '../gameConfig';
 
 type ContextTypes = {
@@ -27,6 +28,8 @@ type ContextTypes = {
   setIsPausedBtnVisible: (status: boolean) => void;
   time: number;
   setTime: (time: number) => void;
+  score: number;
+  setScore: (time: number) => void;
   count: number;
   setCount: (count: number) => void;
   meteors: Meteor[];
@@ -46,6 +49,7 @@ type ContextTypes = {
   COLLISION_ZONE_X1: number;
   COLLISION_ZONE_X2: number;
   METEOR_SPEED: number;
+  SCORE_PER_ASTRONAUT: number;
 };
 
 type ContextPoviderProps = {
@@ -65,6 +69,7 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [isInfo, setIsInfo] = useState<boolean>(false);
   const [currentScore, setCurrentScore] = useState<number>(0);
   const [level, setLevel] = useState<0 | 1 | 2>(0);
+  const [score, setScore] = useState<number>(0)
 
   return (
     <AppContext.Provider
@@ -98,6 +103,9 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         COLLISION_ZONE_X1,
         COLLISION_ZONE_X2,
         METEOR_SPEED,
+        score,
+        setScore,
+        SCORE_PER_ASTRONAUT
       }}
     >
       {children}
