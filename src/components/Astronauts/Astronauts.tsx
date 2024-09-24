@@ -9,7 +9,7 @@ export const Astronauts: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus, ASTRONAUTS, rescuedAstronauts } = context;
+  const { gameStatus, ASTRONAUTS, rescuedAstronauts, setGameStatus } = context;
   const [astronauts, setAstronauts] = useState<number[]>([]);
 
   useEffect(() => {
@@ -23,6 +23,12 @@ export const Astronauts: React.FC = () => {
   useEffect(() => {
     astronauts[rescuedAstronauts - 1] = 1;
   }, [rescuedAstronauts]);
+
+  useEffect(() => {
+    if (rescuedAstronauts === ASTRONAUTS) {
+      setGameStatus('GameWon');
+    }
+  }, [rescuedAstronauts])
 
   return (
     <div className={styles.gameAstronauts}>
