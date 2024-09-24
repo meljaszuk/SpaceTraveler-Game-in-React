@@ -9,31 +9,24 @@ export const Astronauts: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { gameStatus, ASTRONAUTS } = context;
+  const { gameStatus, ASTRONAUTS, rescuedAstronauts } = context;
   const [astronauts, setAstronauts] = useState<number[]>([]);
 
   useEffect(() => {
-    const astronauts: number[] = Array(ASTRONAUTS).fill(1);
+    const astronauts: number[] = Array(ASTRONAUTS).fill(0);
+    setAstronauts(astronauts)
   }, []);
 
-  useEffect(
-    () => {
-      //decrement number of bullets on shot
-      //TEMPORARY CODE:
-      const updatedAstronauts = [1, 1, 1, 0, 0];
-      setAstronauts(updatedAstronauts);
-    },
-    [
-      /* bullets */
-    ]
-  );
+  useEffect(() => {
+    astronauts[rescuedAstronauts - 1] = 1;
+  }, [rescuedAstronauts])
 
-  return (
+    return (
     <div className={styles.gameAstronauts}>
       {astronauts.map((item, index) => (
         <div
           key={index}
-          className={`${styles.bulletIcon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive} ${item === 1 ? '' : styles.used}`}
+          className={`${styles.icon} ${gameStatus === 'GameOver' ? styles.gameOver : styles.gameActive} ${item === 1 ? '' : styles.notYet}`}
         />
       ))}
     </div>

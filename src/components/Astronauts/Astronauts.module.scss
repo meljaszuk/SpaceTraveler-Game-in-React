@@ -2,8 +2,6 @@
 @import '../../_utils/variables.module.scss';
 
 .gameAstronauts {
-
- /*      border: solid 1px yellow; */
   display: flex;
   width: 170px;
   column-gap: 0;
@@ -13,7 +11,7 @@
   padding-top: 5px;
 }
 
-.bulletIcon {
+.icon {
 
   background-repeat: no-repeat;
   background-size: contain;
@@ -30,6 +28,6 @@
   background-image: url($bullet-url);
 }
 
-.used {
+.notYet {
   opacity: 0.1;
 }
