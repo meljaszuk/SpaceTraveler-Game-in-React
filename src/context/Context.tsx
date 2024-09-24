@@ -50,6 +50,8 @@ type ContextTypes = {
   COLLISION_ZONE_X2: number;
   METEOR_SPEED: number;
   SCORE_PER_ASTRONAUT: number;
+  rescuedAstronauts: number;
+  setRescuedAstronauts: (score: number) => void;
 };
 
 type ContextPoviderProps = {
@@ -70,6 +72,7 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [currentScore, setCurrentScore] = useState<number>(0);
   const [level, setLevel] = useState<0 | 1 | 2>(0);
   const [score, setScore] = useState<number>(0)
+  const [rescuedAstronauts, setRescuedAstronauts] = useState<number>(0)
 
   return (
     <AppContext.Provider
@@ -105,7 +108,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         METEOR_SPEED,
         score,
         setScore,
-        SCORE_PER_ASTRONAUT
+        SCORE_PER_ASTRONAUT,
+        rescuedAstronauts, setRescuedAstronauts
       }}
     >
       {children}
