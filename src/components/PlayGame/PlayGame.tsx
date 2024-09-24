@@ -60,6 +60,20 @@ export const PlayGame: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.code === 'Space') {
+        setIsPaused(!isPaused); // Przełączanie pomiędzy true i false
+      }
+    };
+  
+    window.addEventListener('keydown', handleKeyDown);
+  
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isPaused, setIsPaused]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (!isPaused) {
         if (event.key === 'ArrowUp') {
           setShipY((prevY) => {
