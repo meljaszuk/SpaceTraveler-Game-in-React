@@ -180,6 +180,7 @@ export const PlayGame: React.FC = () => {
           } else if (meteor.astronaut === undefined) {
             if (!isCollision) {
               setIsCollision(true);
+              setAstronautsIds({})
             }
           }
         }

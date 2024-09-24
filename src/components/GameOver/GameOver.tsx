@@ -16,13 +16,14 @@ export const GameOver: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { setIsPausedBtnVisible } = context;
+  const { setIsPausedBtnVisible, setRescuedAstronauts } = context;
+
 
   useEffect(() => {
     setIsLoading(false);
     // eslint-disable-next-line prettier/prettier
     setIsPausedBtnVisible(false);
-    console.log('LOADER done');
+    setRescuedAstronauts(0);
   }, []);
 
   useEffect(() => {
