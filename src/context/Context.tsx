@@ -21,7 +21,7 @@ type ContextTypes = {
   gameStatus: GameState;
   setGameStatus: (status: GameState) => void;
   isPaused: boolean;
-  setIsPaused: (status: boolean) => void;
+  setIsPaused: (value: boolean | ((prev: boolean) => boolean)) => void;
   isInfo: boolean;
   setIsInfo: (status: boolean) => void;
   isPausedBtnVisible: boolean;
