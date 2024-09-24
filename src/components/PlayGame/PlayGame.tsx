@@ -1,19 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './PlayGame.module.scss';
 import { AppContext } from '../../context';
-import meteorImg1 from '../../images/meteor-1.png';
-import meteorImg2 from '../../images/meteor-2.png';
-import meteorImg3 from '../../images/meteor-3.png';
-import meteorImg4 from '../../images/meteor-4.png';
-import meteorImg5 from '../../images/meteor-5.png';
+import Img1 from '../../images/meteor-1.png';
+import Img2 from '../../images/meteor-2.png';
+import Img3 from '../../images/meteor-3.png';
+import Img4 from '../../images/meteor-4.png';
+import Img5 from '../../images/meteor-5.png';
+import Img6 from '../../images/meteor-6.png';
+import Img7 from '../../images/meteor-7.png';
+import Img8 from '../../images/meteor-8.png';
+import Img9 from '../../images/meteor-9.png';
+import Img10 from '../../images/meteor-10.png';
 import { Meteor, MeteorInZone } from '../../types/types';
 
-const meteorImages = [
-  meteorImg1,
-  meteorImg2,
-  meteorImg3,
-  meteorImg4,
-  meteorImg5,
+const images = [
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  Img5,
+  Img6,
+  Img7,
+  Img8,
+  Img9,
+  Img10,
 ];
 
 export const PlayGame: React.FC = () => {
@@ -37,6 +47,9 @@ export const PlayGame: React.FC = () => {
     COLLISION_ZONE_X2,
     METEOR_SPEED,
     setGameStatus,
+    setScore,
+    score,
+    SCORE_PER_ASTRONAUT
   } = context;
 
   const [newXs, setNewXs] = useState<Record<string, number>>({});
@@ -49,6 +62,7 @@ export const PlayGame: React.FC = () => {
   >([]);
   const [renderedMeteors, setRenderedMeteors] = useState<Meteor[]>([]);
   const [isCollision, setIsCollision] = useState<boolean>(false);
+  const [astronautIDs, setAstronautsIds] = useState<Record<number, number>>({})
 
   useEffect(() => {
     if (counter < TIME_PER_LEVEL * 100 && !isPaused) {
@@ -137,6 +151,7 @@ export const PlayGame: React.FC = () => {
         r: meteor.size / 2,
         cX: newXs[meteor.id] + meteor.size / 2,
         cY: meteor.y + meteor.size / 2,
+        astronaut: meteor.astronaut
       })
     );
 
@@ -154,11 +169,29 @@ export const PlayGame: React.FC = () => {
         const b: number = meteor.cY - pointY;
 
         if ((a ** 2 + b ** 2) ** 0.5 <= meteor.r) {
-          setIsCollision(true);
+          if(meteor.astronaut === true) {
+            setAstronautsIds((prevAstronautIDs) => {
+              if (!prevAstronautIDs[meteor.id]) {
+                return { ...prevAstronautIDs, [meteor.id]: 1 };
+              }
+              return prevAstronautIDs;
+            })
+          } else if (meteor.astronaut === undefined) {
+            if (!isCollision) {
+              setIsCollision(true);
+            }
+          }
         }
       });
     });
   }, [meteorsInCollisionZone, shipY]);
+
+
+  useEffect(() => {
+    const astronautsNumber = Object.keys(astronautIDs).length
+  console.log(astronautsNumber, astronautIDs)
+    setScore(astronautsNumber * SCORE_PER_ASTRONAUT)
+  }, [astronautIDs])
 
   useEffect(() => {
     if (isCollision) {
@@ -180,7 +213,7 @@ export const PlayGame: React.FC = () => {
               width: `${item.size}px`,
               height: `${item.size}px`,
               transform: `rotate(${item.rotation}deg)`,
-              backgroundImage: `url(${meteorImages[item.bcg - 1]})`,
+              backgroundImage: `url(${images[item.bcg - 1]})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'contain',
             }}
