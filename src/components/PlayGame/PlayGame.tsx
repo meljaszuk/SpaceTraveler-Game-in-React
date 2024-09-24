@@ -47,9 +47,7 @@ export const PlayGame: React.FC = () => {
     COLLISION_ZONE_X2,
     METEOR_SPEED,
     setGameStatus,
-    setScore,
-    score,
-    SCORE_PER_ASTRONAUT
+    setRescuedAstronauts
   } = context;
 
   const [newXs, setNewXs] = useState<Record<string, number>>({});
@@ -190,7 +188,7 @@ export const PlayGame: React.FC = () => {
   useEffect(() => {
     const astronautsNumber = Object.keys(astronautIDs).length
   console.log(astronautsNumber, astronautIDs)
-    setScore(astronautsNumber * SCORE_PER_ASTRONAUT)
+  setRescuedAstronauts(astronautsNumber)
   }, [astronautIDs])
 
   useEffect(() => {
