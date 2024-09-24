@@ -3,7 +3,7 @@ import { Meteor } from '../types/types';
 export const randomRotation = (): number => Math.floor(Math.random() * 360) + 1;
 export const randomBcg = (): number => Math.floor(Math.random() * 5) + 1;
 
-export const TIME_PER_LEVEL = 45;
+export const TIME_PER_LEVEL = 90;
 export const SPEED_1 = 10;
 export const SPEED_2 = 20;
 export const ASTRONAUTS = 5;
@@ -12,7 +12,7 @@ export const SHIP_INITAL_Y = 225;
 export const SHIP_INITAL_X = 200;
 export const COLLISION_ZONE_X1 = 255;
 export const COLLISION_ZONE_X2 = 347;
-export const METEOR_SPEED = 2;
+export const METEOR_SPEED = 1;
 export const SCORE_PER_ASTRONAUT = 500;
 
 export const initCollisionPointsX = {
@@ -308,7 +308,7 @@ export const meteors: Meteor[] = [
     id: 22,
     size: 40,
     x: 2990,
-    y: 70,
+    y: 90,
     bcg: randomBcg(),
     rotation: randomRotation(),
   },
