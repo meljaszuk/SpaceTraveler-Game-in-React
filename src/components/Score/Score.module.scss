@@ -2,16 +2,12 @@
 @import '../../_utils/variables.module.scss';
 
 .gameScore {
-
-  /*     border: solid 1px yellow; */
   color: $aqua;
   font-family: $font-digital;
   letter-spacing: 5px;
   font-size: 50px;
   -webkit-text-stroke: $dark-blue 1px;
   text-shadow: 0 0 30px rgba(4, 240, 239, 0.9);
-
-
   box-sizing: border-box;
 }
 

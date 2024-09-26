@@ -2,17 +2,18 @@
 @import '../../_utils/variables.module.scss';
 
 @keyframes button {
-    0% {
-      transform: scale(100%);
-    }
-  
-    50% {
-      transform: scale(130%);
-    }
-    100% {
-      transform: scale(100%);
-    }
+  0% {
+    transform: scale(100%);
   }
+
+  50% {
+    transform: scale(130%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
 
 .button {
   background-image: url($button-start-regular-url);

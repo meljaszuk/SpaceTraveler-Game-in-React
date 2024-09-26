@@ -18,7 +18,7 @@ export const GameStart: React.FC = () => {
   const { setIsPausedBtnVisible } = context;
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 500); /* LOADING SIMULATION */
+    setTimeout(() => setIsLoading(false), 500);
     setIsPausedBtnVisible(false);
   }, []);
 
@@ -31,7 +31,6 @@ export const GameStart: React.FC = () => {
           <div className={styles.gameScreen}>
             <Title />
             <StartButton />
-            {/*   ADD INSTRUCTIONS */}
           </div>
           <Panel />
         </>

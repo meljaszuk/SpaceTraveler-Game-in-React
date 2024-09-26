@@ -5,21 +5,17 @@
   width: $game-w;
   height: $game-h;
   z-index: 3;
-
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: flex-start;
-  /*     border: solid 1px yellow; */
 }
 
 .gameScreen {
-  /*     border: solid 1px red; */
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 480px;
 }
-

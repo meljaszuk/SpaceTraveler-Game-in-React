@@ -20,24 +20,6 @@ export const App: React.FC = () => {
 
   const { gameStatus, setGameStatus, setIsPaused, isPaused } = context;
 
-  const handleOnClick = (gameStat: GameState) => {
-    setGameStatus(gameStat);
-  };
-
-  const pauseGame = () => {
-    if (gameStatus === 'GameActive') {
-      setIsPaused(!isPaused);
-    }
-  };
-
-  useEffect(() => {
-    console.log('App started!!!!!');
-  }, []);
-
-  useEffect(() => {
-    console.log(isPaused);
-  }, [isPaused]);
-
   return (
     <>
       <div className={styles.body}>

@@ -16,8 +16,6 @@
   box-sizing: border-box;
 }
 
-
-
 .gameWon {
   color: $game-won;
   text-shadow: $game-won-shadow;
@@ -35,7 +33,6 @@
 .arrow {
   height: 40px;
   width: 2px;
-
   position: absolute;
   top: 0;
   left: 19px;
@@ -48,6 +45,7 @@
   width: 100%;
   height: 50%;
 }
+
 .arrowTransparent {
   background-color: transparent;
   width: 100%;

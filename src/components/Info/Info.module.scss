@@ -40,28 +40,28 @@
 
 /* Scrollbar styles for WebKit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 12px; /* szerokość pionowego scrollbara */
-  height: 12px; /* szerokość poziomego scrollbara */
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $bcg-color; /* tło tracku */
+  background: $bcg-color;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $bcg-color; /* kolor uchwytu */
-  border-radius: 10px; /* zaokrąglone krawędzie */
-  border: 2px solid $aqua; /* obwódka wokół uchwytu */
+  background-color: $bcg-color;
+  border-radius: 10px;
+  border: 2px solid $aqua;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: $bcg-color; /* ciemniejszy kolor uchwytu po najechaniu */
+  background-color: $bcg-color;
 }
 
 /* Scrollbar styles for Firefox */
 * {
-  scrollbar-width: thin; /* szerokość: thin, auto lub none */
-  scrollbar-color: $bcg-color $aqua; /* kolor uchwytu i tracku */
+  scrollbar-width: thin;
+  scrollbar-color: $bcg-color $aqua;
 }
 
 .close {

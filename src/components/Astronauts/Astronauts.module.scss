@@ -1,5 +1,6 @@
 @import '../../_utils/font.module.scss';
 @import '../../_utils/variables.module.scss';
+@import '../../_utils/mixins.module.scss';
 
 .gameAstronauts {
   display: flex;
@@ -12,7 +13,6 @@
 }
 
 .icon {
-
   background-repeat: no-repeat;
   background-size: contain;
   height: 40px;

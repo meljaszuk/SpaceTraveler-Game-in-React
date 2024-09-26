@@ -3,7 +3,7 @@ import styles from './Background.module.scss';
 import { AppContext } from '../../context';
 
 export const Background: React.FC = () => {
-  const BCGs = [1]; //FIXED LENGTH TO CHANGE - should depend on level
+  const BCGs = [1];
   const context = useContext(AppContext);
 
   if (!context) {

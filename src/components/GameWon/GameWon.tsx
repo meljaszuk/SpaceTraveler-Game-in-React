@@ -15,13 +15,8 @@ export const GameWon: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const {
-    setIsPausedBtnVisible,
-    score,
-    setScore,
-    rescuedAstronauts,
-    ASTRONAUTS,
-  } = context;
+  const { setIsPausedBtnVisible, score, rescuedAstronauts, ASTRONAUTS } =
+    context;
   const [bonus, setBonus] = useState<0 | 1000>(0);
 
   useEffect(() => {
