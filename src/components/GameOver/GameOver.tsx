@@ -9,7 +9,6 @@ import { AppContext } from '../../context';
 
 export const GameOver: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [isScreenHidden, setIsScreenHidden] = useState<boolean>(true);
   const context = useContext(AppContext);
 
   if (!context) {
@@ -23,10 +22,6 @@ export const GameOver: React.FC = () => {
     // eslint-disable-next-line prettier/prettier
     setIsPausedBtnVisible(false);
     setRescuedAstronauts(0);
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => setIsScreenHidden(false), 800);
   }, []);
 
   return (
