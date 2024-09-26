@@ -5,7 +5,67 @@
 }
 
 .body {
+  @include on-large-screen {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @include on-small-screen {
+    display: none;
+  }
+}
+
+.rwd {
+  @include on-small-screen {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+  }
+
+  @include on-large-screen {
+    display: none;
+  }
+}
+
+@keyframes ufo {
+  0% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+.ufo {
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  animation: ufo 1s infinite ease-in-out;
+  justify-content: center;
+}
+
+.alert {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: $aqua;
+  font-family: $font-digital;
+  display: flex;
+  justify-content: center;
+}
+
+.screen {
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: $aqua;
+  font-family: $font;
+  display: flex;
+  justify-content: center;
 }

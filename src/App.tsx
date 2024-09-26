@@ -8,6 +8,7 @@ import { Info } from './components/Info';
 import styles from './App.module.scss';
 import { AppContext } from './context';
 import { GameState } from './types/types';
+import ufoImg from './images/ufo.png';
 
 export const App: React.FC = () => {
   const context = useContext(AppContext);
@@ -37,13 +38,26 @@ export const App: React.FC = () => {
   }, [isPaused]);
 
   return (
-    <div className={styles.body}>
-      <Info />
-      <Background />
-      {gameStatus === 'GameStart' && <GameStart />}
-      {gameStatus === 'GameActive' && <GameActive />}
-      {gameStatus === 'GameWon' && <GameWon />}
-      {gameStatus === 'GameOver' && <GameOver />}
-    </div>
+    <>
+      <div className={styles.body}>
+        <Info />
+        <Background />
+        {gameStatus === 'GameStart' && <GameStart />}
+        {gameStatus === 'GameActive' && <GameActive />}
+        {gameStatus === 'GameWon' && <GameWon />}
+        {gameStatus === 'GameOver' && <GameOver />}
+      </div>
+
+      <div className={styles.rwd}>
+        <div className={styles.alert}>
+          The universe doesn't fit on such a small screen. You need a screen of
+          at least:
+        </div>
+        <div className={styles.screen}>1220px x 600px.</div>
+        <div className={styles.ufo}>
+          <img src={ufoImg} />
+        </div>
+      </div>
+    </>
   );
 };

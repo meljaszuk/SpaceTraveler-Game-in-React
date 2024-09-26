@@ -1,3 +1,5 @@
+@import './mixins.module.scss';
+
 $font: 'EFour', sans-serif;
 $font-digital: 'Digital', sans-serif;
 $aqua: #04f0ef;
@@ -29,4 +31,3 @@ $button-play-on: '../../../public/images/play-on.png';
 $button-pause-off: '../../../public/images/pause-off.png';
 $button-pause-on: '../../../public/images/pause-on.png';
 $spaceship-url: '../../../public/images/spaceship.png';
-
