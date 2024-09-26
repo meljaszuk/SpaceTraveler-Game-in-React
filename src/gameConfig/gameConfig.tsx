@@ -90,8 +90,8 @@ export const meteors: Meteor[] = [
   {
     id: 104,
     size: 50,
-    x: 2980,
-    y: 30,
+    x: 2990,
+    y: 45,
     bcg: 10,
     rotation: 0,
     astronaut: true,
