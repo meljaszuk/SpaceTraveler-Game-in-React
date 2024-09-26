@@ -63,6 +63,10 @@ export const PlayGame: React.FC = () => {
       if (event.code === 'Space') {
         setIsPaused((prev: boolean): boolean => !prev);
       }
+
+      if (event.code === 'Escape') {
+        setGameStatus('GameStart');
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
