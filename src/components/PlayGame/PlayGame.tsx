@@ -37,6 +37,8 @@ export const PlayGame: React.FC = () => {
     METEOR_SPEED,
     setGameStatus,
     setRescuedAstronauts,
+    setIsInfo,
+    setIsLeaving,
   } = context;
 
   const [newXs, setNewXs] = useState<Record<string, number>>({});
@@ -62,10 +64,16 @@ export const PlayGame: React.FC = () => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.code === 'Space') {
         setIsPaused((prev: boolean): boolean => !prev);
+        setIsInfo(false);
       }
 
       if (event.code === 'Escape') {
-        setGameStatus('GameStart');
+        setIsInfo(false);
+        setIsLeaving(true);
+      }
+
+      if (event.code === 'KeyI') {
+        setIsInfo((prev: boolean): boolean => !prev);
       }
     };
 

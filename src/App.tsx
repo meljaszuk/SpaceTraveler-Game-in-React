@@ -5,6 +5,7 @@ import { GameActive } from './components/GameActive';
 import { GameOver } from './components/GameOver';
 import { GameWon } from './components/GameWon';
 import { Info } from './components/Info';
+import { LeaveGame } from './components/LeaveGame';
 import styles from './App.module.scss';
 import { AppContext } from './context';
 import { GameState } from './types/types';
@@ -46,6 +47,7 @@ export const App: React.FC = () => {
         {gameStatus === 'GameActive' && <GameActive />}
         {gameStatus === 'GameWon' && <GameWon />}
         {gameStatus === 'GameOver' && <GameOver />}
+        <LeaveGame />
       </div>
 
       <div className={styles.rwd}>

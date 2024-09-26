@@ -23,7 +23,9 @@ type ContextTypes = {
   isPaused: boolean;
   setIsPaused: (value: boolean | ((prev: boolean) => boolean)) => void;
   isInfo: boolean;
-  setIsInfo: (status: boolean) => void;
+  setIsInfo: (value: boolean | ((prev: boolean) => boolean)) => void;
+  isLeaving: boolean;
+  setIsLeaving: (value: boolean | ((prev: boolean) => boolean)) => void;
   isPausedBtnVisible: boolean;
   setIsPausedBtnVisible: (status: boolean) => void;
   time: number;
@@ -73,6 +75,7 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [level, setLevel] = useState<0 | 1 | 2>(0);
   const [score, setScore] = useState<number>(0);
   const [rescuedAstronauts, setRescuedAstronauts] = useState<number>(0);
+  const [isLeaving, setIsLeaving] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
@@ -111,6 +114,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         SCORE_PER_ASTRONAUT,
         rescuedAstronauts,
         setRescuedAstronauts,
+        isLeaving,
+        setIsLeaving,
       }}
     >
       {children}
