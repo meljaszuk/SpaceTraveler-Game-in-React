@@ -18,7 +18,6 @@ export const GameOver: React.FC = () => {
 
   const { setIsPausedBtnVisible, setRescuedAstronauts } = context;
 
-
   useEffect(() => {
     setIsLoading(false);
     // eslint-disable-next-line prettier/prettier

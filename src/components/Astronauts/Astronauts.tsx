@@ -28,7 +28,7 @@ export const Astronauts: React.FC = () => {
     if (rescuedAstronauts === ASTRONAUTS) {
       setGameStatus('GameWon');
     }
-  }, [rescuedAstronauts])
+  }, [rescuedAstronauts]);
 
   return (
     <div className={styles.gameAstronauts}>

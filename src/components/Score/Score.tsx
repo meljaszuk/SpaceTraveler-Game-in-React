@@ -3,7 +3,7 @@ import styles from './Score.module.scss';
 import { AppContext } from '../../context';
 
 export const Score: React.FC = () => {
-  const [stringScore, setStringScore] = useState<string>("0000")
+  const [stringScore, setStringScore] = useState<string>('0000');
   const context = useContext(AppContext);
 
   if (!context) {
@@ -24,8 +24,8 @@ export const Score: React.FC = () => {
 
   useEffect(() => {
     const formattedScore = score.toString().padStart(4, '0');
-    setStringScore(formattedScore)
-  }, [score])
+    setStringScore(formattedScore);
+  }, [score]);
 
   return (
     <div
