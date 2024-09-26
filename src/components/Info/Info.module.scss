@@ -1,7 +1,6 @@
 @import '../../_utils/font.module.scss';
 @import '../../_utils/variables.module.scss';
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -11,10 +10,10 @@
   position: absolute;
   z-index: 600000000;
   top: 150px;
-  left: calc((100vw - 1200px + 400px)/2);
+  left: calc((100vw - 1200px + 400px) / 2);
   overflow-y: auto;
   overflow-x: hidden;
-
+  border: solid 1px $aqua;
 }
 
 .info {
