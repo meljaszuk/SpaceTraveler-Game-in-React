@@ -54,6 +54,8 @@ type ContextTypes = {
   SCORE_PER_ASTRONAUT: number;
   rescuedAstronauts: number;
   setRescuedAstronauts: (score: number) => void;
+  isFirstGame: boolean;
+  setIsFirstGame: (value: boolean | ((prev: boolean) => boolean)) => void;
 };
 
 type ContextPoviderProps = {
@@ -76,6 +78,7 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [score, setScore] = useState<number>(0);
   const [rescuedAstronauts, setRescuedAstronauts] = useState<number>(0);
   const [isLeaving, setIsLeaving] = useState<boolean>(false);
+  const [isFirstGame, setIsFirstGame] = useState<boolean>(true);
 
   return (
     <AppContext.Provider
@@ -116,6 +119,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         setRescuedAstronauts,
         isLeaving,
         setIsLeaving,
+        isFirstGame,
+        setIsFirstGame,
       }}
     >
       {children}

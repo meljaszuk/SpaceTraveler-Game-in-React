@@ -9,11 +9,22 @@ export const StartButton: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { setGameStatus, gameStatus, setIsInfo, setRescuedAstronauts } =
-    context;
+  const {
+    setGameStatus,
+    gameStatus,
+    setIsInfo,
+    setRescuedAstronauts,
+    isFirstGame,
+    setIsFirstGame,
+  } = context;
 
   const handleStart = () => {
-    setGameStatus('GameActive');
+    if (isFirstGame) {
+      setIsInfo(true);
+      setIsFirstGame(false);
+    } else {
+      setGameStatus('GameActive');
+    }
     setRescuedAstronauts(0);
   };
 

@@ -25,6 +25,19 @@
   position: relative;
 }
 
+.em {
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  height: 20px;
+  background-color: $aqua;
+  color: $bcg-color;
+  align-items: center;
+  padding: 2px;
+  min-width: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
 /* Scrollbar styles for WebKit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
   width: 12px; /* szerokość pionowego scrollbara */
@@ -72,4 +85,31 @@
     transform: scale(1.1);
     color: white;
   }
+}
+h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: $font !important;
+}
+
+.ok {
+  display: flex;
+  background-color: $aqua;
+  color: $bcg-color;
+  font-family: $font;
+  justify-content: center;
+  width: 50px;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.warpper {
+  display: flex;
+  justify-content: center;
 }

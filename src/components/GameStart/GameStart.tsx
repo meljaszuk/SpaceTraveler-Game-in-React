@@ -22,6 +22,8 @@ export const GameStart: React.FC = () => {
     setIsPausedBtnVisible(false);
   }, []);
 
+
+  
   return (
     <div className={styles.container}>
       {isLoading ? (

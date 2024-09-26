@@ -9,7 +9,7 @@ export const Info: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { isInfo, setIsInfo, setIsPaused } = context;
+  const { isInfo, setIsInfo, setIsPaused, gameStatus, setGameStatus } = context;
 
   const closeInfo = () => {
     setIsInfo(false);
@@ -22,6 +22,16 @@ export const Info: React.FC = () => {
     }
   }, [isInfo]);
 
+  const handleOK = () => {
+    if (gameStatus === 'GameStart') {
+      setGameStatus('GameActive');
+      setIsInfo(false);
+    } else {
+      closeInfo();
+      setIsPaused(true);
+    }
+  };
+
   return (
     <>
       {isInfo && (
@@ -31,49 +41,27 @@ export const Info: React.FC = () => {
               <div className={styles.cross}>x</div>
             </div>
             <div className={styles.info}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              tempora quod voluptates velit eum pariatur dicta nobis soluta quos
-              accusamus, tenetur accusantium ducimus consequuntur cupiditate
-              quasi hic. Est, magni beatae! Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Placeat vel animi dicta, aluam nam
-              velit iure! At ab ratione ullam, veritatis eveniet commodi unde
-              architecto, alias esse earum quam possimus!
+              <h2>Your mission</h2>
+              <p>
+                You are about to start your mission. Your task is to rescue five
+                astronauts lost in a meteor field after their spaceship crashed.
+                Safely guide them back to Earth.
+              </p>
+              <p>
+                Your spaceship can only move up by pressing{' '}
+                <strong className={styles.em}>&#8593;</strong> key or down by
+                pressing <strong className={styles.em}>&#8595;</strong> key. Use
+                the <strong className={styles.em}>SPACEBAR</strong> to pause the
+                game, and <strong className={styles.em}>ESC</strong> to exit.
+                You can view these instructions anytime by pressing the{' '}
+                <strong className={styles.em}>I</strong> key.
+              </p>
+              <p>Good luck! The survivors are counting on you, Hero!</p>
             </div>
-            <div className={styles.info}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              tempora quod voluptates velit eum pariatur dicta nobis soluta quos
-              accusamus, tenetur accusantium ducimus consequuntur cupiditate
-              quasi hic. Est, magni beatae! Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Placeat vel animi dicta, aluam nam
-              velit iure! At ab ratione ullam, veritatis eveniet commodi unde
-              architecto, alias esse earum quam possimus!
-            </div>
-            <div className={styles.info}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              tempora quod voluptates velit eum pariatur dicta nobis soluta quos
-              accusamus, tenetur accusantium ducimus consequuntur cupiditate
-              quasi hic. Est, magni beatae! Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Placeat vel animi dicta, aluam nam
-              velit iure! At ab ratione ullam, veritatis eveniet commodi unde
-              architecto, alias esse earum quam possimus!
-            </div>
-            <div className={styles.info}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              tempora quod voluptates velit eum pariatur dicta nobis soluta quos
-              accusamus, tenetur accusantium ducimus consequuntur cupiditate
-              quasi hic. Est, magni beatae! Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Placeat vel animi dicta, aluam nam
-              velit iure! At ab ratione ullam, veritatis eveniet commodi unde
-              architecto, alias esse earum quam possimus!
-            </div>
-            <div className={styles.info}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              tempora quod voluptates velit eum pariatur dicta nobis soluta quos
-              accusamus, tenetur accusantium ducimus consequuntur cupiditate
-              quasi hic. Est, magni beatae! Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Placeat vel animi dicta, aluam nam
-              velit iure! At ab ratione ullam, veritatis eveniet commodi unde
-              architecto, alias esse earum quam possimus!
+            <div className={styles.warpper}>
+              <div className={styles.ok} onClick={handleOK}>
+                OK!
+              </div>
             </div>
           </div>
         </div>
