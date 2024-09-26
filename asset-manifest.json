@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/SpaceTraveler-Game-in-React/static/css/main.dcbca20d.css",
-    "main.js": "/SpaceTraveler-Game-in-React/static/js/main.62c670cc.js",
+    "main.css": "/SpaceTraveler-Game-in-React/static/css/main.dadc2e9b.css",
+    "main.js": "/SpaceTraveler-Game-in-React/static/js/main.ad16bc2d.js",
+    "static/media/explosion.png": "/SpaceTraveler-Game-in-React/static/media/explosion.ad4becfa14ebfe1ee0df.png",
     "static/media/game-over-video.mp4": "/SpaceTraveler-Game-in-React/static/media/game-over-video.7a5b6b677b75b324cdc9.mp4",
-    "static/media/bcgS.jpg": "/SpaceTraveler-Game-in-React/static/media/bcgS.afff8ec9f1886a55bf0b.jpg",
-    "static/media/meteor-2.png": "/SpaceTraveler-Game-in-React/static/media/meteor-2.846764922eb0fecb567f.png",
-    "static/media/meteor-4.png": "/SpaceTraveler-Game-in-React/static/media/meteor-4.1f4293f49bead936f80d.png",
-    "static/media/meteor-1.png": "/SpaceTraveler-Game-in-React/static/media/meteor-1.b830ac89e460cfe11e15.png",
+    "static/media/bcgS.jpg": "/SpaceTraveler-Game-in-React/static/media/bcgS.b40845d5fdea3989a754.jpg",
+    "static/media/meteor-4.png": "/SpaceTraveler-Game-in-React/static/media/meteor-4.7fcb2a4693459da71701.png",
+    "static/media/meteor-3.png": "/SpaceTraveler-Game-in-React/static/media/meteor-3.f3cb91a0f0e1d9b88d1e.png",
+    "static/media/meteor-2.png": "/SpaceTraveler-Game-in-React/static/media/meteor-2.3c47aa5e28fd763edecd.png",
+    "static/media/meteor-5.png": "/SpaceTraveler-Game-in-React/static/media/meteor-5.0168afa0f3b8411819c3.png",
+    "static/media/meteor-1.png": "/SpaceTraveler-Game-in-React/static/media/meteor-1.82c813fabe2f2ecc1aa3.png",
     "static/media/panel-gameover.png": "/SpaceTraveler-Game-in-React/static/media/panel-gameover.6101a173e8ca95a0033c.png",
-    "static/media/meteor-3.png": "/SpaceTraveler-Game-in-React/static/media/meteor-3.e83db2018b650330f5b7.png",
     "static/media/Efourpro.ttf": "/SpaceTraveler-Game-in-React/static/media/Efourpro.6c4235b574cd59b94111.ttf",
-    "static/media/meteor-5.png": "/SpaceTraveler-Game-in-React/static/media/meteor-5.d66ef3e399d3a03993bc.png",
-    "static/media/explosion.png": "/SpaceTraveler-Game-in-React/static/media/explosion.f2a9894c779b3062ea5a.png",
     "static/media/panel.png": "/SpaceTraveler-Game-in-React/static/media/panel.5cf6e09abf3f834b3279.png",
     "static/media/spaceship.png": "/SpaceTraveler-Game-in-React/static/media/spaceship.83b046eaef80878b5e28.png",
     "static/media/Digital.ttf": "/SpaceTraveler-Game-in-React/static/media/Digital.e4f0d914940cef82362b.ttf",
     "index.html": "/SpaceTraveler-Game-in-React/index.html",
-    "main.dcbca20d.css.map": "/SpaceTraveler-Game-in-React/static/css/main.dcbca20d.css.map",
-    "main.62c670cc.js.map": "/SpaceTraveler-Game-in-React/static/js/main.62c670cc.js.map"
+    "main.dadc2e9b.css.map": "/SpaceTraveler-Game-in-React/static/css/main.dadc2e9b.css.map",
+    "main.ad16bc2d.js.map": "/SpaceTraveler-Game-in-React/static/js/main.ad16bc2d.js.map"
   },
   "entrypoints": [
-    "static/css/main.dcbca20d.css",
-    "static/js/main.62c670cc.js"
+    "static/css/main.dadc2e9b.css",
+    "static/js/main.ad16bc2d.js"
   ]
 }
