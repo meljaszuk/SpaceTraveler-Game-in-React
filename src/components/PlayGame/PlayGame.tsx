@@ -168,7 +168,7 @@ export const PlayGame: React.FC = () => {
         const a: number = meteor.cX - pointX;
         const b: number = meteor.cY - pointY;
 
-        if ((a ** 2 + b ** 2) ** 0.5 <= meteor.r) {
+        if ((a ** 2 + b ** 2) ** 0.5 <= 0.97 * meteor.r) {
           if (meteor.astronaut === true) {
             setAstronautsIds((prevAstronautIDs) => {
               if (!prevAstronautIDs[meteor.id]) {
@@ -206,7 +206,7 @@ export const PlayGame: React.FC = () => {
         {renderedMeteors.map((item, index) => (
           <div
             key={index}
-            className={styles.meteor}
+            className={`${styles.meteor} ${item.id in astronautIDs ? styles.rescued : ''}`}
             style={{
               top: `${item.y}px`,
               left: `${newXs[item.id]}px`,
