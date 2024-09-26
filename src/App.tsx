@@ -37,44 +37,13 @@ export const App: React.FC = () => {
   }, [isPaused]);
 
   return (
-    <div>
-      <div>
-        <div className={styles.temporaryLinks}>
-          <div
-            onClick={() => handleOnClick('GameStart')}
-            className={styles.tempLinks}
-          >
-            GameStart
-          </div>
-          <div
-            onClick={() => handleOnClick('GameActive')}
-            className={styles.tempLinks}
-          >
-            GameActive (in progress)
-          </div>
-          <div
-            onClick={() => handleOnClick('GameWon')}
-            className={styles.tempLinks}
-          >
-            GameWon (in progress)
-          </div>
-          <div
-            onClick={() => handleOnClick('GameOver')}
-            className={styles.tempLinks}
-          >
-            GameOver
-          </div>
-        </div>
-
-        <div className={styles.body}>
-          <Info />
-          <Background />
-          {gameStatus === 'GameStart' && <GameStart />}
-          {gameStatus === 'GameActive' && <GameActive />}
-          {gameStatus === 'GameWon' && <GameWon />}
-          {gameStatus === 'GameOver' && <GameOver />}
-        </div>
-      </div>
+    <div className={styles.body}>
+      <Info />
+      <Background />
+      {gameStatus === 'GameStart' && <GameStart />}
+      {gameStatus === 'GameActive' && <GameActive />}
+      {gameStatus === 'GameWon' && <GameWon />}
+      {gameStatus === 'GameOver' && <GameOver />}
     </div>
   );
 };
