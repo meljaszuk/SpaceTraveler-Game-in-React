@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './Info.module.scss';
 import { AppContext } from '../../context';
 
@@ -15,6 +15,12 @@ export const Info: React.FC = () => {
     setIsInfo(false);
     setIsPaused(false);
   };
+
+  useEffect(() => {
+    if (isInfo) {
+      setIsPaused(true);
+    }
+  }, [isInfo]);
 
   return (
     <>
