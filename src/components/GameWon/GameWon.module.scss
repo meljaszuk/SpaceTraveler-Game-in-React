@@ -50,9 +50,34 @@
   height: 550px;
 }
 
-.gamePanel {
-  /*     border: solid 1px blue; */
-  width: 100%;
+.summary {
   display: flex;
-  /*     height: 120px; */
+
+  flex-direction: column;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.description {
+  color: $aqua;
+  font-family: $font;
+  letter-spacing: 1px;
+  padding-top: 5px;
+  width: 400px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.number {
+  display: flex;
+  color: $aqua;
+  font-family: $font-digital;
+  font-size: 20px;
+  padding-top: 5px;
+  padding-left: 30px;
+  justify-content: flex-end;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  justify-content: flex-end;
 }

@@ -5,6 +5,7 @@ import { Panel } from '../Panel';
 import { Title } from '../Title';
 import { Loader } from '../Loader';
 import { AppContext } from '../../context';
+import { ASTRONAUTS } from '../../gameConfig';
 
 export const GameWon: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -14,13 +15,22 @@ export const GameWon: React.FC = () => {
     throw new Error('AppContext must be used within a ContextProvider');
   }
 
-  const { setIsPausedBtnVisible } = context;
+  const {
+    setIsPausedBtnVisible,
+    score,
+    setScore,
+    rescuedAstronauts,
+    ASTRONAUTS,
+  } = context;
+  const [bonus, setBonus] = useState<0 | 1000>(0);
 
   useEffect(() => {
     setIsLoading(false);
     setIsPausedBtnVisible(false);
-    console.log('LOADER done');
-    // eslint-disable-next-line prettier/prettier
+
+    if (rescuedAstronauts === ASTRONAUTS) {
+      setBonus(1000);
+    }
   }, []);
 
   return (
@@ -31,7 +41,26 @@ export const GameWon: React.FC = () => {
         <>
           <div className={styles.gameScreen}>
             <Title />
-            <div>GameWon in progress</div>
+            <div className={styles.summary}>
+              <div className={styles.row}>
+                <div className={styles.description}>
+                  Score for rescuing astronauts:{' '}
+                </div>
+                <div className={styles.number}>{score - bonus}</div>
+              </div>
+
+              <div className={styles.row}>
+                <div className={styles.description}>
+                  Bonus for rescuing whole crew:{' '}
+                </div>
+                <div className={styles.number}>{bonus}</div>
+              </div>
+
+              <div className={styles.row}>
+                <div className={styles.description}>TOTAL: </div>
+                <div className={styles.number}>{score}</div>
+              </div>
+            </div>
           </div>
           <Panel />
         </>
