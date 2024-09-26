@@ -61,12 +61,12 @@ export const PlayGame: React.FC = () => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.code === 'Space') {
-        setIsPaused((prev: boolean): boolean => !prev); 
+        setIsPaused((prev: boolean): boolean => !prev);
       }
     };
-  
+
     window.addEventListener('keydown', handleKeyDown);
-  
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
@@ -84,10 +84,9 @@ export const PlayGame: React.FC = () => {
           });
           setCollisionPointsY((prevCollisionPointsY) => {
             const updatedCollisionPointsY = { ...prevCollisionPointsY };
-            for (const point in updatedCollisionPointsY) {
-              updatedCollisionPointsY[point] =
-                updatedCollisionPointsY[point] - 1 * SHIP_SPEED_MODIFIER;
-            }
+            Object.keys(updatedCollisionPointsY).forEach((point) => {
+              updatedCollisionPointsY[point] -= SHIP_SPEED_MODIFIER;
+            });
             return updatedCollisionPointsY;
           });
         } else if (event.key === 'ArrowDown') {
@@ -180,7 +179,7 @@ export const PlayGame: React.FC = () => {
           } else if (meteor.astronaut === undefined) {
             if (!isCollision) {
               setIsCollision(true);
-              setAstronautsIds({})
+              setAstronautsIds({});
             }
           }
         }
@@ -218,9 +217,7 @@ export const PlayGame: React.FC = () => {
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'contain',
             }}
-          >
-            {item.id}
-          </div>
+          />
         ))}
       </div>
 
