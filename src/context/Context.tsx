@@ -1,4 +1,4 @@
-import React, { useState, createContext, ReactNode } from 'react';
+import React, { useState, createContext, ReactNode, useEffect } from 'react';
 import { GameState, Meteor } from '../types/types';
 import {
   meteors,
@@ -16,6 +16,9 @@ import {
   METEOR_SPEED,
   SCORE_PER_ASTRONAUT,
 } from '../gameConfig';
+
+import audioBeepFile from '../sounds/crash.mp3';
+import audioThankYouFile from '../sounds/thankyou.mp3';
 
 type ContextTypes = {
   gameStatus: GameState;
@@ -56,6 +59,8 @@ type ContextTypes = {
   setRescuedAstronauts: (score: number) => void;
   isFirstGame: boolean;
   setIsFirstGame: (value: boolean | ((prev: boolean) => boolean)) => void;
+  audioCrash: HTMLAudioElement;
+  audioThankYou: HTMLAudioElement;
 };
 
 type ContextPoviderProps = {
@@ -79,6 +84,15 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
   const [rescuedAstronauts, setRescuedAstronauts] = useState<number>(0);
   const [isLeaving, setIsLeaving] = useState<boolean>(false);
   const [isFirstGame, setIsFirstGame] = useState<boolean>(true);
+  const [audioCrash] = useState<HTMLAudioElement>(new Audio(audioBeepFile));
+  const [audioThankYou] = useState<HTMLAudioElement>(
+    new Audio(audioThankYouFile)
+  );
+
+  useEffect(() => {
+    audioCrash.load();
+    audioThankYou.load();
+  }, []);
 
   return (
     <AppContext.Provider
@@ -121,6 +135,8 @@ export const ContextProvider: React.FC<ContextPoviderProps> = ({
         setIsLeaving,
         isFirstGame,
         setIsFirstGame,
+        audioCrash,
+        audioThankYou,
       }}
     >
       {children}

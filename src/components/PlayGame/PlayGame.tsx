@@ -39,6 +39,8 @@ export const PlayGame: React.FC = () => {
     setRescuedAstronauts,
     setIsInfo,
     setIsLeaving,
+    audioCrash,
+    audioThankYou,
   } = context;
 
   const [newXs, setNewXs] = useState<Record<string, number>>({});
@@ -191,6 +193,8 @@ export const PlayGame: React.FC = () => {
           } else if (meteor.astronaut === undefined) {
             if (!isCollision) {
               setIsCollision(true);
+              audioCrash.play();
+              audioThankYou.pause();
               setAstronautsIds({});
             }
           }
@@ -203,6 +207,9 @@ export const PlayGame: React.FC = () => {
     const astronautsNumber = Object.keys(astronautIDs).length;
     console.log(astronautsNumber, astronautIDs);
     setRescuedAstronauts(astronautsNumber);
+    if (astronautsNumber > 0) {
+      audioThankYou.play();
+    }
   }, [astronautIDs]);
 
   useEffect(() => {
@@ -218,7 +225,7 @@ export const PlayGame: React.FC = () => {
         {renderedMeteors.map((item, index) => (
           <div
             key={index}
-            className={`${styles.meteor} ${item.id in astronautIDs ? styles.rescued : ''}`}
+            className={`${styles.meteor} ${item.id in astronautIDs || isCollision ? styles.rescued : ''}`}
             style={{
               top: `${item.y}px`,
               left: `${newXs[item.id]}px`,
