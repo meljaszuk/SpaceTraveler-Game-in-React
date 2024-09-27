@@ -16,7 +16,6 @@ export const PauseButton: React.FC = () => {
     if (isPausedBtnVisible) {
       setIsPaused(!isPaused);
       setIsInfo(false);
-      console.log('pause button used');
     }
   };
 
