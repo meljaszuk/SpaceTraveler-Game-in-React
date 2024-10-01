@@ -2,10 +2,6 @@ import React, { useEffect } from 'react';
 import styles from './Loader.module.scss';
 
 export const Loader: React.FC = () => {
-  useEffect(() => {
-    console.log('Loader done');
-  }, []);
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.animation}>

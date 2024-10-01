@@ -16,15 +16,12 @@ export const Counter: React.FC = () => {
   // eslint-disable-next-line no-unused-vars
   useEffect(() => {
     setIsPaused(true);
-    console.log('paused');
   }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCount((prevCount) => prevCount - 1);
     }, 1000);
-
-    console.log('control counter', count);
 
     return () => {
       clearInterval(intervalId);
