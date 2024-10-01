@@ -5,7 +5,6 @@ import { Panel } from '../Panel';
 import { Title } from '../Title';
 import { Loader } from '../Loader';
 import { AppContext } from '../../context';
-import { ASTRONAUTS } from '../../gameConfig';
 
 export const GameWon: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
