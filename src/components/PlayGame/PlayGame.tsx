@@ -220,6 +220,11 @@ export const PlayGame: React.FC = () => {
   }, [isCollision]);
 
   ///NOWA ANIMACJA
+
+  const checkCollision = () => {
+    console.log(position);
+  };
+
   const requestRef = useRef<number | null>(null);
   const previousTimeRef = useRef<number | null>(null); // Dodaj typ
   const [position, setPosition] = React.useState(0);
@@ -229,6 +234,8 @@ export const PlayGame: React.FC = () => {
       const deltaTime = time - previousTimeRef.current;
 
       setPosition((prevPosition) => prevPosition - deltaTime * 0.05);
+
+      checkCollision();
     }
     previousTimeRef.current = time; // Przypisanie wartości
     requestRef.current = requestAnimationFrame(animate);
