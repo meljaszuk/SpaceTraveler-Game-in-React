@@ -41,7 +41,7 @@
 .slide {
   background-image: url($bcg-url);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   width: 8000px;
   height: $game-h;
 }
