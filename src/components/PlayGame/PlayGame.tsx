@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import styles from './PlayGame.module.scss';
 import { AppContext } from '../../context';
 import Img1 from '../../images/meteor-1.png';
@@ -219,6 +219,30 @@ export const PlayGame: React.FC = () => {
     }
   }, [isCollision]);
 
+  ///NOWA ANIMACJA
+  const requestRef = useRef<number | null>(null);
+  const previousTimeRef = useRef<number | null>(null); // Dodaj typ
+  const [position, setPosition] = React.useState(0);
+
+  const animate = (time: DOMHighResTimeStamp) => {
+    if (previousTimeRef.current !== null) {
+      const deltaTime = time - previousTimeRef.current;
+
+      setPosition((prevPosition) => prevPosition + deltaTime * 0.05);
+    }
+    previousTimeRef.current = time; // Przypisanie wartości
+    requestRef.current = requestAnimationFrame(animate);
+  };
+
+  useEffect(() => {
+    requestRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (requestRef.current !== null) {
+        cancelAnimationFrame(requestRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className={styles.playground}>
       <div className={styles.wrapper}>
@@ -248,6 +272,13 @@ export const PlayGame: React.FC = () => {
         className={`${isCollision ? styles.explosion : ''}`}
         style={{ top: `${shipY - 20}px`, left: `${SHIP_INITAL_X + 40}px` }}
       />
+
+      <div
+        className={styles.x}
+        style={{ transform: `translateX(${position}px)` }}
+      >
+        X
+      </div>
     </div>
   );
 };
