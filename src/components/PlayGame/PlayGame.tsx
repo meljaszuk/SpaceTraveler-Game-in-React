@@ -228,7 +228,7 @@ export const PlayGame: React.FC = () => {
     if (previousTimeRef.current !== null) {
       const deltaTime = time - previousTimeRef.current;
 
-      setPosition((prevPosition) => prevPosition + deltaTime * 0.05);
+      setPosition((prevPosition) => prevPosition - deltaTime * 0.05);
     }
     previousTimeRef.current = time; // Przypisanie wartości
     requestRef.current = requestAnimationFrame(animate);
