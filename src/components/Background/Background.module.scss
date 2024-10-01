@@ -53,6 +53,7 @@
 
 .GameInactive {
   animation: scrollInactiveGame $bcg-speed-slow linear infinite;
+  opacity: 0.6;
 }
 
 .GamePaused {
