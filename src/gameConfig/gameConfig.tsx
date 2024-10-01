@@ -519,8 +519,8 @@ export const meteors: Meteor[] = [
   {
     id: 101,
     size: 50,
-    x: 5300,
-    y: 0,
+    x: 4800,
+    y: 130,
     bcg: 7,
     rotation: 0,
     astronaut: true,
