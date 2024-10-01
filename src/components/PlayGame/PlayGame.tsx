@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './PlayGame.module.scss';
 import { AppContext } from '../../context';
-import Img1 from '../../images/meteor-1.png';
-import Img2 from '../../images/meteor-2.png';
-import Img3 from '../../images/meteor-3.png';
-import Img4 from '../../images/meteor-4.png';
-import Img5 from '../../images/meteor-5.png';
-import Img6 from '../../images/meteor-6.png';
-import Img7 from '../../images/meteor-7.png';
-import Img8 from '../../images/meteor-8.png';
-import Img9 from '../../images/meteor-9.png';
-import Img10 from '../../images/meteor-10.png';
+import Img1 from '../../images/meteor-1.webp';
+import Img2 from '../../images/meteor-2.webp';
+import Img3 from '../../images/meteor-3.webp';
+import Img4 from '../../images/meteor-4.webp';
+import Img5 from '../../images/meteor-5.webp';
+import Img6 from '../../images/meteor-6.webp';
+import Img7 from '../../images/meteor-7.webp';
+import Img8 from '../../images/meteor-8.webp';
+import Img9 from '../../images/meteor-9.webp';
+import Img10 from '../../images/meteor-10.webp';
 import { Meteor, MeteorInZone } from '../../types/types';
 
 const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10];

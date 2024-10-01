@@ -9,7 +9,7 @@ import { LeaveGame } from './components/LeaveGame';
 import styles from './App.module.scss';
 import { AppContext } from './context';
 import { GameState } from './types/types';
-import ufoImg from './images/ufo.png';
+import ufoImg from './images/ufo.webp';
 
 export const App: React.FC = () => {
   const context = useContext(AppContext);
