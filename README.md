@@ -2,15 +2,18 @@
 
 **A game fully designed and developed by me in React**, where players control a spaceship to rescue astronauts lost in a meteor field. The game features a comprehensive collision detection system, dynamic scoring, pausing functionality, and smooth keyboard-based controls. Additionally, the game includes engaging animations and immersive sound effects, all crafted to enhance the player's experience.
 
+**Demo**: [Play the Game](https://meljaszuk.github.io/SpaceTraveler-Game-in-React/)  
+**Source Code**: [View on GitHub](https://github.com/meljaszuk/SpaceTraveler-Game-in-React)
+
 **Design and Graphics**  
 During the development process, I focused on my own design by building graphics using canvas components. I carefully selected fonts that complement the game’s aesthetic, ensuring a cohesive and immersive visual experience for players.
 
-![Space Traveler Game](https://github.com/meljaszuk/SpaceTraveler-Game-in-React/blob/main/space-3.jpg)
+![Space Traveler Game](https://github.com/meljaszuk/SpaceTraveler-Game-in-React/blob/main/space-2.jpg)
 
 **Collision System**  
 The collision system checks for meteors within a vertical "collision zone" since the spaceship moves only up and down. For every collision point, the distance between the point and the center of the meteor (a circular object) is calculated. If the distance is less than the meteor's radius, a collision is detected.
 
-![Space Traveler Game](https://github.com/meljaszuk/SpaceTraveler-Game-in-React/blob/main/space-2.jpg)
+![Space Traveler Game](https://github.com/meljaszuk/SpaceTraveler-Game-in-React/blob/main/space-3.jpg)
 
 **Scoring System**
 
