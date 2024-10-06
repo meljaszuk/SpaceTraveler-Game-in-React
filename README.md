@@ -34,5 +34,5 @@ The collision system checks for meteors within a vertical "collision zone" since
 - **Efficient rendering**: Only game objects (meteors, astronauts) with an `x` coordinate between 0 and 1200 (screen width) are rendered, optimizing performance.
 - **Selective collision detection**: Only meteors within the collision zone are checked, preventing unnecessary, memory-consuming calculations.
 
-**Limitations**  
+**Room for improvements**  
 The current animation is based on `setTimeout`, which has limitations such as inconsistent frame rates and performance bottlenecks. I am working on implementing `requestAnimationFrame` to provide smoother animations and better performance.
